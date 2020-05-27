@@ -1,0 +1,386 @@
+[Wed May 13 14:05:25.849566 2020] [ssl:warn] [pid 4908:tid 640] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:05:25.872475 2020] [ssl:warn] [pid 4908:tid 640] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:05:25.894417 2020] [mpm_winnt:notice] [pid 4908:tid 640] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 13 14:05:25.894417 2020] [mpm_winnt:notice] [pid 4908:tid 640] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 13 14:05:25.894417 2020] [core:notice] [pid 4908:tid 640] AH00094: Command line: 'C:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed May 13 14:05:25.897430 2020] [mpm_winnt:notice] [pid 4908:tid 640] AH00418: Parent: Created child process 23848
+[Wed May 13 14:05:26.215103 2020] [ssl:warn] [pid 23848:tid 660] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:05:26.238007 2020] [ssl:warn] [pid 23848:tid 660] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:05:26.253996 2020] [mpm_winnt:notice] [pid 23848:tid 660] AH00354: Child: Starting 150 worker threads.
+[Wed May 13 14:07:22.684339 2020] [ssl:warn] [pid 20032:tid 680] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:07:22.709779 2020] [ssl:warn] [pid 20032:tid 680] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:07:22.726736 2020] [mpm_winnt:notice] [pid 20032:tid 680] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 13 14:07:22.726736 2020] [mpm_winnt:notice] [pid 20032:tid 680] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 13 14:07:22.726736 2020] [core:notice] [pid 20032:tid 680] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed May 13 14:07:22.728730 2020] [mpm_winnt:notice] [pid 20032:tid 680] AH00418: Parent: Created child process 20632
+[Wed May 13 14:07:23.133675 2020] [ssl:warn] [pid 20632:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:07:23.158609 2020] [ssl:warn] [pid 20632:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:07:23.175563 2020] [mpm_winnt:notice] [pid 20632:tid 672] AH00354: Child: Starting 150 worker threads.
+[Wed May 13 14:20:55.172697 2020] [ssl:warn] [pid 14936:tid 664] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:20:55.200754 2020] [core:warn] [pid 14936:tid 664] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 13 14:20:55.201780 2020] [ssl:warn] [pid 14936:tid 664] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:20:55.217642 2020] [mpm_winnt:notice] [pid 14936:tid 664] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 13 14:20:55.217642 2020] [mpm_winnt:notice] [pid 14936:tid 664] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 13 14:20:55.217642 2020] [core:notice] [pid 14936:tid 664] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed May 13 14:20:55.217642 2020] [mpm_winnt:notice] [pid 14936:tid 664] AH00418: Parent: Created child process 26528
+[Wed May 13 14:20:55.622418 2020] [ssl:warn] [pid 26528:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:20:55.652689 2020] [ssl:warn] [pid 26528:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 14:20:55.670738 2020] [mpm_winnt:notice] [pid 26528:tid 672] AH00354: Child: Starting 150 worker threads.
+[Wed May 13 14:45:35.080305 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64009] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in C:\\xampp\\htdocs\\index.php on line 22
+[Wed May 13 14:45:46.232625 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64012] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 14:45:46.232625 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64012] PHP Warning:  filesize(): stat failed for testdir1 in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 14:45:46.232625 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64012] PHP Warning:  filesize(): stat failed for testdir2 in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 14:47:46.946852 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64026] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 14:47:54.549919 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64029] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 21
+[Wed May 13 14:47:54.550917 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64029] PHP Warning:  filesize(): stat failed for testdir1 in C:\\xampp\\htdocs\\index.php on line 21
+[Wed May 13 14:47:54.550917 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64029] PHP Warning:  filesize(): stat failed for testdir2 in C:\\xampp\\htdocs\\index.php on line 21
+[Wed May 13 15:11:27.969806 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64280] script 'C:/xampp/htdocs/upload.php' not found or unable to stat, referer: http://127.0.0.1/index.php
+[Wed May 13 15:27:06.491242 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:64458] PHP Notice:  Undefined index: folderPath in C:\\xampp\\htdocs\\upload.php on line 4, referer: http://127.0.0.1/index.php
+[Wed May 13 15:27:26.641302 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:64464] PHP Notice:  Undefined index: folderPath in C:\\xampp\\htdocs\\upload.php on line 4, referer: http://127.0.0.1/index.php
+[Wed May 13 16:00:58.649382 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64787] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 45
+[Wed May 13 16:01:07.408988 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64790] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 46
+[Wed May 13 16:01:08.513129 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:64790] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 46
+[Wed May 13 16:01:53.292026 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:64797] PHP Warning:  parse_ini_file(sample.ini): failed to open stream: No such file or directory in C:\\xampp\\htdocs\\upload.php on line 4
+[Wed May 13 16:45:08.574576 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65169] PHP Parse error:  syntax error, unexpected '$extensions' (T_VARIABLE) in C:\\xampp\\htdocs\\upload.php on line 8, referer: http://127.0.0.1/index.php
+[Wed May 13 16:45:29.269667 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65179] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 49, referer: http://127.0.0.1/index.php
+[Wed May 13 16:46:27.433888 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65207] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 49, referer: http://127.0.0.1/index.php
+[Wed May 13 16:47:18.182661 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65217] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 49, referer: http://127.0.0.1/index.php
+[Wed May 13 16:47:36.995033 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65222] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\htdocs\\upload.php on line 50, referer: http://127.0.0.1/index.php
+[Wed May 13 16:53:34.381976 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65312] PHP Warning:  move_uploaded_file(c:/pliki/norm_3.pdf): failed to open stream: No such file or directory in C:\\xampp\\htdocs\\upload.php on line 42, referer: http://127.0.0.1/index.php
+[Wed May 13 16:53:34.381976 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65312] PHP Warning:  move_uploaded_file(): Unable to move 'C:\\xampp\\tmp\\php9362.tmp' to 'c:/pliki/norm_3.pdf' in C:\\xampp\\htdocs\\upload.php on line 42, referer: http://127.0.0.1/index.php
+[Wed May 13 16:58:01.296004 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65330] PHP Notice:  Undefined variable: target_file in C:\\xampp\\htdocs\\upload.php on line 12, referer: http://127.0.0.1/index.php
+[Wed May 13 16:58:01.296004 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65330] PHP Warning:  move_uploaded_file(c:/pliki/norm_3.pdf): failed to open stream: No such file or directory in C:\\xampp\\htdocs\\upload.php on line 43, referer: http://127.0.0.1/index.php
+[Wed May 13 16:58:01.297000 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65330] PHP Warning:  move_uploaded_file(): Unable to move 'C:\\xampp\\tmp\\phpA60C.tmp' to 'c:/pliki/norm_3.pdf' in C:\\xampp\\htdocs\\upload.php on line 43, referer: http://127.0.0.1/index.php
+[Wed May 13 16:58:11.349122 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65336] PHP Warning:  move_uploaded_file(c:/pliki/norm_3.pdf): failed to open stream: No such file or directory in C:\\xampp\\htdocs\\upload.php on line 44, referer: http://127.0.0.1/index.php
+[Wed May 13 16:58:11.349122 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65336] PHP Warning:  move_uploaded_file(): Unable to move 'C:\\xampp\\tmp\\phpCD4C.tmp' to 'c:/pliki/norm_3.pdf' in C:\\xampp\\htdocs\\upload.php on line 44, referer: http://127.0.0.1/index.php
+[Wed May 13 17:02:29.888836 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65366] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:02:29.889828 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65366] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:02:29.889828 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65366] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:02:29.889828 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65366] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.304775 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.304775 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.305773 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.306771 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.306771 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.306771 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.306771 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:00.306771 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65396] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.905610 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.905610 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.905610 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.905610 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.905610 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.906608 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:17.907605 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.111385 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.112381 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.113379 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.113379 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.113379 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.113379 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  A non-numeric value encountered in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:07:20.113379 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65402] PHP Warning:  filesize(): stat failed for 0 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:08:38.914416 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65413] PHP Warning:  filesize() expects parameter 1 to be a valid path, string given in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:08:38.915413 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65413] PHP Warning:  filesize(): stat failed for @ in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:08:38.915413 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65413] PHP Warning:  filesize(): stat failed for @ in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:08:38.915413 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65413] PHP Warning:  filesize(): stat failed for @ in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:12:24.735081 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65436] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:12:24.735081 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65436] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:12:24.735081 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65436] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:12:24.735081 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65436] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:01.797236 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65442] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:01.797236 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65442] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:01.798233 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65442] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:01.798233 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65442] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:39.755601 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65450] PHP Warning:  filesize(): stat failed for \x020\x140$! in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:39.755601 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65450] PHP Warning:  filesize(): stat failed for B(L`LijI\x10 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:39.756599 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65450] PHP Warning:  filesize(): stat failed for B(L`LijIP in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:39.756599 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65450] PHP Warning:  filesize(): stat failed for B*P`L!*`D in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:48.631295 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65455] PHP Warning:  filesize(): stat failed for \x020%0$! in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:48.631295 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65455] PHP Warning:  filesize(): stat failed for B(,`LijI! in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:48.631295 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65455] PHP Warning:  filesize(): stat failed for B(,`LijI&quot; in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:48.631295 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65455] PHP Warning:  filesize(): stat failed for B*&quot;`L!*`$ in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:54.729351 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65458] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:54.729351 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65458] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:54.729351 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65458] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:13:54.729351 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65458] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 44
+[Wed May 13 17:15:50.790007 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:50.790007 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:50.790007 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:50.790007 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.266244 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.267241 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.267241 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.268239 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.622084 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.622084 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.623118 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.623118 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.791796 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.791796 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.791796 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.792818 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.963551 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.964550 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.964550 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:52.965548 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:53.132539 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:53.133536 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:53.134532 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:15:53.134532 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65473] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:16:27.429109 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65486] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in C:\\xampp\\htdocs\\index.php on line 40
+[Wed May 13 17:16:37.080440 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65489] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:16:37.081437 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65489] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:16:37.081437 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65489] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:16:37.081437 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65489] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:20:00.460996 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Warning:  syntax error, unexpected $end, expecting TC_DOLLAR_CURLY or TC_QUOTED_STRING or '"' in config.ini on line 10\n in C:\\xampp\\htdocs\\index.php on line 15
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type bool in C:\\xampp\\htdocs\\index.php on line 18
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type null in C:\\xampp\\htdocs\\index.php on line 18
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type bool in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type null in C:\\xampp\\htdocs\\index.php on line 19
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type bool in C:\\xampp\\htdocs\\index.php on line 20
+[Wed May 13 17:20:00.460996 2020] [php7:notice] [pid 26528:tid 1964] [client 127.0.0.1:65504] PHP Notice:  Trying to access array offset on value of type null in C:\\xampp\\htdocs\\index.php on line 20
+[Wed May 13 17:20:10.079892 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65510] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:20:10.080890 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65510] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:20:10.080890 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65510] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:20:10.080890 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65510] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 43
+[Wed May 13 17:22:21.557186 2020] [php7:error] [pid 26528:tid 1964] [client 127.0.0.1:65521] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\\xampp\\htdocs\\index.php on line 42
+[Wed May 13 17:22:27.610353 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65526] PHP Warning:  filesize(): stat failed for 215771 in C:\\xampp\\htdocs\\index.php on line 46
+[Wed May 13 17:22:27.610353 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65526] PHP Warning:  filesize(): stat failed for file_in_1.txt in C:\\xampp\\htdocs\\index.php on line 46
+[Wed May 13 17:22:27.611350 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65526] PHP Warning:  filesize(): stat failed for file_in_root.txt in C:\\xampp\\htdocs\\index.php on line 46
+[Wed May 13 17:22:27.611350 2020] [php7:warn] [pid 26528:tid 1964] [client 127.0.0.1:65526] PHP Warning:  filesize(): stat failed for norm_3.pdf in C:\\xampp\\htdocs\\index.php on line 46
+[Wed May 13 19:25:30.362724 2020] [php7:notice] [pid 26528:tid 1960] [client 127.0.0.1:50365] PHP Notice:  Undefined index: file in C:\\xampp\\htdocs\\delete.php on line 13, referer: http://127.0.0.1/
+[Wed May 13 19:25:30.363721 2020] [php7:warn] [pid 26528:tid 1960] [client 127.0.0.1:50365] PHP Warning:  unlink(C:\\pliki): Is a directory in C:\\xampp\\htdocs\\delete.php on line 22, referer: http://127.0.0.1/
+[Wed May 13 19:25:48.438420 2020] [php7:notice] [pid 26528:tid 1960] [client 127.0.0.1:50367] PHP Notice:  Undefined index: file in C:\\xampp\\htdocs\\delete.php on line 13, referer: http://127.0.0.1/
+[Wed May 13 19:25:48.438420 2020] [php7:warn] [pid 26528:tid 1960] [client 127.0.0.1:50367] PHP Warning:  unlink(C:\\pliki): Is a directory in C:\\xampp\\htdocs\\delete.php on line 22, referer: http://127.0.0.1/
+[Wed May 13 19:32:21.890562 2020] [php7:notice] [pid 26528:tid 1960] [client 127.0.0.1:50497] PHP Notice:  Undefined variable: target_file in C:\\xampp\\htdocs\\index.php on line 60, referer: http://127.0.0.1/index.php
+[Wed May 13 19:32:21.890562 2020] [php7:notice] [pid 26528:tid 1960] [client 127.0.0.1:50497] PHP Notice:  Undefined variable: target_file in C:\\xampp\\htdocs\\index.php on line 60, referer: http://127.0.0.1/index.php
+[Wed May 13 19:46:32.023009 2020] [php7:error] [pid 26528:tid 1960] [client 127.0.0.1:50948] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\\xampp\\htdocs\\upload.php on line 40, referer: http://127.0.0.1/index.php
+[Wed May 13 20:50:08.087951 2020] [ssl:warn] [pid 21804:tid 632] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 20:50:08.112884 2020] [core:warn] [pid 21804:tid 632] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 13 20:50:08.114911 2020] [ssl:warn] [pid 21804:tid 632] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 20:50:08.137121 2020] [mpm_winnt:notice] [pid 21804:tid 632] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 13 20:50:08.137121 2020] [mpm_winnt:notice] [pid 21804:tid 632] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 13 20:50:08.137121 2020] [core:notice] [pid 21804:tid 632] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed May 13 20:50:08.138119 2020] [mpm_winnt:notice] [pid 21804:tid 632] AH00418: Parent: Created child process 16056
+[Wed May 13 20:50:08.478344 2020] [ssl:warn] [pid 16056:tid 652] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 20:50:08.503278 2020] [ssl:warn] [pid 16056:tid 652] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 13 20:50:08.524221 2020] [mpm_winnt:notice] [pid 16056:tid 652] AH00354: Child: Starting 150 worker threads.
+[Wed May 13 21:02:49.943247 2020] [php7:error] [pid 16056:tid 1948] [client 127.0.0.1:51973] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING) in C:\\xampp\\htdocs\\index.php on line 111
+[Wed May 13 21:57:51.738870 2020] [mpm_winnt:crit] [pid 16056:tid 652] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Sun May 17 18:19:56.803465 2020] [ssl:warn] [pid 18384:tid 592] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 18:19:56.829423 2020] [core:warn] [pid 18384:tid 592] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun May 17 18:19:56.831420 2020] [ssl:warn] [pid 18384:tid 592] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 18:19:56.982542 2020] [mpm_winnt:notice] [pid 18384:tid 592] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Sun May 17 18:19:56.982542 2020] [mpm_winnt:notice] [pid 18384:tid 592] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Sun May 17 18:19:56.982542 2020] [core:notice] [pid 18384:tid 592] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Sun May 17 18:19:56.983539 2020] [mpm_winnt:notice] [pid 18384:tid 592] AH00418: Parent: Created child process 2436
+[Sun May 17 18:19:57.312665 2020] [ssl:warn] [pid 2436:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 18:19:57.335629 2020] [ssl:warn] [pid 2436:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 18:19:57.352613 2020] [mpm_winnt:notice] [pid 2436:tid 644] AH00354: Child: Starting 150 worker threads.
+[Sun May 17 18:34:12.311578 2020] [php7:notice] [pid 2436:tid 1912] [client 127.0.0.1:64345] PHP Notice:  Undefined index: page in C:\\xampp\\htdocs\\lab6\\index.php on line 5
+[Sun May 17 18:35:23.451220 2020] [php7:error] [pid 2436:tid 1912] [client 127.0.0.1:64353] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\\xampp\\htdocs\\lab6\\index.php on line 4
+[Sun May 17 18:57:01.530173 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64618] PHP Parse error:  syntax error, unexpected '$content' (T_VARIABLE), expecting '(' in C:\\xampp\\htdocs\\lab6\\index.php on line 31
+[Sun May 17 18:57:12.778490 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64620] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\\xampp\\htdocs\\lab6\\index.php on line 32
+[Sun May 17 18:57:19.433391 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64622] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\\xampp\\htdocs\\lab6\\index.php on line 32
+[Sun May 17 19:06:55.663422 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64718] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/index.php?page=1
+[Sun May 17 19:07:19.782950 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64721] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/index.php?page=1
+[Sun May 17 19:07:20.492055 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64721] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/index.php?page=1
+[Sun May 17 19:07:55.895068 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64727] PHP Parse error:  syntax error, unexpected 'and' (T_LOGICAL_AND) in C:\\xampp\\htdocs\\lab6\\index.php on line 40, referer: http://127.0.0.1/lab6/index.php?page=1
+[Sun May 17 19:20:24.307337 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:64898] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in C:\\xampp\\htdocs\\lab6\\login.php on line 29
+[Sun May 17 19:20:41.524514 2020] [php7:notice] [pid 2436:tid 1908] [client 127.0.0.1:64902] PHP Notice:  Undefined index: login in C:\\xampp\\htdocs\\lab6\\login.php on line 27
+[Sun May 17 19:27:43.729634 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65091] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 34, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:27:47.306194 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65091] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 34, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:28:23.476384 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65103] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:29:04.305513 2020] [php7:notice] [pid 2436:tid 1908] [client 127.0.0.1:65132] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:29:18.919833 2020] [php7:notice] [pid 2436:tid 1908] [client 127.0.0.1:65136] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:29:26.488633 2020] [php7:notice] [pid 2436:tid 1908] [client 127.0.0.1:65139] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:30:03.033902 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65155] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:30:14.449510 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65159] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:30:23.098362 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65162] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:31:47.809010 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65180] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:31:58.973401 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65183] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:32:33.198704 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65188] PHP Fatal error:  Uncaught Error: Call to a member function store_result() on bool in C:\\xampp\\htdocs\\lab6\\login.php:34\nStack trace:\n#0 C:\\xampp\\htdocs\\lab6\\login.php(57): User->exists()\n#1 {main}\n  thrown in C:\\xampp\\htdocs\\lab6\\login.php on line 34, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:33:00.634764 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65192] PHP Fatal error:  Uncaught Error: Object of class mysqli could not be converted to string in C:\\xampp\\htdocs\\lab6\\login.php:32\nStack trace:\n#0 C:\\xampp\\htdocs\\lab6\\login.php(57): User->exists()\n#1 {main}\n  thrown in C:\\xampp\\htdocs\\lab6\\login.php on line 32, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:33:15.351729 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65197] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\lab6\\login.php on line 36, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:10.293901 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65217] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in C:\\xampp\\htdocs\\lab6\\login.php:35\nStack trace:\n#0 C:\\xampp\\htdocs\\lab6\\login.php(59): User->exists()\n#1 {main}\n  thrown in C:\\xampp\\htdocs\\lab6\\login.php on line 35, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.631063 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.632059 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.632059 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.632059 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.632059 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:41.632059 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65225] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:59.412569 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65229] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:59.412569 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65229] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:35:59.412569 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65229] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\lab6\\login.php on line 39, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:49:41.940335 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65287] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 56, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.936526 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 57, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.952562 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.952562 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 19:59:03.953508 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65351] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\lab6\\index.php on line 37, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:02:54.904104 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65379] PHP Parse error:  syntax error, unexpected '[', expecting '(' in C:\\xampp\\htdocs\\lab6\\index.php on line 4, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:03:11.835533 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65382] PHP Fatal error:  Uncaught Error: Call to undefined function print_t() in C:\\xampp\\htdocs\\lab6\\index.php:49\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\htdocs\\lab6\\index.php on line 49, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:05:23.803779 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65412] PHP Parse error:  syntax error, unexpected '}' in C:\\xampp\\htdocs\\lab6\\index.php on line 102, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:05:34.221140 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65416] PHP Fatal error:  Uncaught Error: Cannot use object of type Content as array in C:\\xampp\\htdocs\\lab6\\index.php:103\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\htdocs\\lab6\\index.php on line 103, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:05:48.371521 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65420] PHP Notice:  Undefined offset: 0 in C:\\xampp\\htdocs\\lab6\\index.php on line 103, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:06:09.909064 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65425] PHP Notice:  Undefined offset: 0 in C:\\xampp\\htdocs\\lab6\\index.php on line 103, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:11:23.334120 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:65466] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\\xampp\\htdocs\\lab6\\index.php on line 87, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:11:32.825285 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:65468] PHP Notice:  Undefined variable: page in C:\\xampp\\htdocs\\lab6\\index.php on line 83, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:11:32.826192 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:65468] PHP Warning:  Invalid argument supplied for foreach() in C:\\xampp\\htdocs\\lab6\\index.php on line 83, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:17:05.733295 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49193] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 16, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:43:58.232437 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:49365] PHP Parse error:  syntax error, unexpected '$servername' (T_VARIABLE), expecting identifier (T_STRING) in C:\\xampp\\htdocs\\lab6\\index.php on line 7, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:44:12.212505 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:49369] PHP Parse error:  syntax error, unexpected '{' in C:\\xampp\\htdocs\\lab6\\login.php on line 9, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:44:31.980000 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:49376] PHP Parse error:  syntax error, unexpected '{' in C:\\xampp\\htdocs\\lab6\\login.php on line 9, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:44:39.550853 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:49379] PHP Parse error:  syntax error, unexpected '{' in C:\\xampp\\htdocs\\lab6\\login.php on line 9, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:44:52.935669 2020] [php7:error] [pid 2436:tid 1908] [client 127.0.0.1:49383] PHP Parse error:  syntax error, unexpected ';', expecting function (T_FUNCTION) or const (T_CONST) in C:\\xampp\\htdocs\\lab6\\class_definitions.php on line 41, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:49:28.433529 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49500] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 20, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:56:48.733103 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:49551] PHP Parse error:  syntax error, unexpected 'logout' (T_STRING), expecting ';' or ',' in C:\\xampp\\htdocs\\lab6\\index.php on line 95, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:57:29.331179 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49556] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 20:57:39.314969 2020] [php7:error] [pid 2436:tid 1900] [client 127.0.0.1:49566] script 'C:/xampp/htdocs/lab6/logout.php' not found or unable to stat, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:22.961783 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:22.961783 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:24.977319 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:24.977319 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:27.242267 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:58:27.242267 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49574] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:29.147102 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:49595] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:29.147102 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49595] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:29.861029 2020] [php7:warn] [pid 2436:tid 1900] [client 127.0.0.1:49595] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:29.861029 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49595] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:50.336466 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:51.189133 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:51.845561 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:52.285386 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:52.718978 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:53.197986 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 20:59:53.650777 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49612] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:01:13.055077 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49648] PHP Notice:  Undefined variable: _SESSION in C:\\xampp\\htdocs\\lab6\\logout.php on line 2, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:01:13.055077 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49648] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 3, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:01:31.194166 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49654] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 4, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:01:33.829937 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49654] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:01:34.813136 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49654] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 4, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:01:49.743679 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49675] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:01:50.432661 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49675] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 5, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:02:34.676467 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49688] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:02:35.290582 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49688] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:03:16.817839 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49720] PHP Notice:  Undefined offset: 1 in C:\\xampp\\htdocs\\lab6\\index.php on line 115
+[Sun May 17 21:03:16.818870 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49720] PHP Notice:  Trying to get property 'content' of non-object in C:\\xampp\\htdocs\\lab6\\index.php on line 115
+[Sun May 17 21:03:38.931061 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49729] PHP Notice:  Undefined offset: 4 in C:\\xampp\\htdocs\\lab6\\index.php on line 115
+[Sun May 17 21:03:38.931061 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49729] PHP Notice:  Trying to get property 'content' of non-object in C:\\xampp\\htdocs\\lab6\\index.php on line 115
+[Sun May 17 21:04:46.882903 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49743] PHP Notice:  Undefined offset: 4 in C:\\xampp\\htdocs\\lab6\\index.php on line 116
+[Sun May 17 21:04:46.882903 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49743] PHP Notice:  Trying to get property 'content' of non-object in C:\\xampp\\htdocs\\lab6\\index.php on line 116
+[Sun May 17 21:04:47.945322 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49743] PHP Notice:  Undefined offset: 4 in C:\\xampp\\htdocs\\lab6\\index.php on line 116
+[Sun May 17 21:04:47.946273 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49743] PHP Notice:  Trying to get property 'content' of non-object in C:\\xampp\\htdocs\\lab6\\index.php on line 116
+[Sun May 17 21:07:43.593052 2020] [php7:notice] [pid 2436:tid 1900] [client 127.0.0.1:49783] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:31:32.169429 2020] [ssl:warn] [pid 11404:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 21:31:32.193343 2020] [core:warn] [pid 11404:tid 636] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun May 17 21:31:32.195334 2020] [ssl:warn] [pid 11404:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 21:31:32.211291 2020] [mpm_winnt:notice] [pid 11404:tid 636] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Sun May 17 21:31:32.211291 2020] [mpm_winnt:notice] [pid 11404:tid 636] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Sun May 17 21:31:32.211291 2020] [core:notice] [pid 11404:tid 636] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Sun May 17 21:31:32.212320 2020] [mpm_winnt:notice] [pid 11404:tid 636] AH00418: Parent: Created child process 12952
+[Sun May 17 21:31:32.512145 2020] [ssl:warn] [pid 12952:tid 648] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 21:31:32.535057 2020] [ssl:warn] [pid 12952:tid 648] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 17 21:31:32.553008 2020] [mpm_winnt:notice] [pid 12952:tid 648] AH00354: Child: Starting 150 worker threads.
+[Sun May 17 21:31:35.877688 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50164] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:32:17.514727 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50179] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:33:22.718666 2020] [php7:notice] [pid 12952:tid 1920] [client 127.0.0.1:50249] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:33:27.727618 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50259] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:33:41.607209 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50269] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:33:43.567468 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50269] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:37:17.158156 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50368] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php?page=3
+[Sun May 17 21:37:24.267433 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50382] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:40:03.836357 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50414] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php?page=4
+[Sun May 17 21:40:28.204442 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50424] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:42:26.499230 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50467] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php
+[Sun May 17 21:42:30.570915 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50467] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:43:45.061951 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50505] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\logout.php on line 11, referer: http://127.0.0.1/lab6/index.php?page=5
+[Sun May 17 21:44:40.757592 2020] [php7:notice] [pid 12952:tid 1956] [client 127.0.0.1:50521] PHP Notice:  Undefined variable: permanent in C:\\xampp\\htdocs\\lab6\\login.php on line 21, referer: http://127.0.0.1/lab6/login.php
+[Sun May 17 21:47:47.752719 2020] [mpm_winnt:crit] [pid 12952:tid 648] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed May 27 14:04:41.172332 2020] [ssl:warn] [pid 2800:tid 620] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:41.200289 2020] [core:warn] [pid 2800:tid 620] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 27 14:04:41.202279 2020] [ssl:warn] [pid 2800:tid 620] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:41.364817 2020] [mpm_winnt:notice] [pid 2800:tid 620] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 27 14:04:41.364817 2020] [mpm_winnt:notice] [pid 2800:tid 620] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 27 14:04:41.364817 2020] [core:notice] [pid 2800:tid 620] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/xampp/apache -f conf\\httpd.conf'
+[Wed May 27 14:04:41.366838 2020] [mpm_winnt:notice] [pid 2800:tid 620] AH00418: Parent: Created child process 13760
+Apache server shutdown initiated...
+sl:warn] [pid 13760:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:41.760525 2020] [ssl:warn] [pid 13760:tid 672] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:41.778470 2020] [mpm_winnt:notice] [pid 13760:tid 672] AH00354: Child: Starting 150 worker threads.
+[Wed May 27 14:04:46.425179 2020] [mpm_winnt:notice] [pid 2800:tid 620] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed May 27 14:04:48.429447 2020] [mpm_winnt:notice] [pid 13760:tid 672] AH00364: Child: All worker threads have exited.
+[Wed May 27 14:04:48.455352 2020] [mpm_winnt:notice] [pid 2800:tid 620] AH00430: Parent: Child process 13760 exited successfully.
+[Wed May 27 14:04:54.324565 2020] [ssl:warn] [pid 5276:tid 632] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:54.348529 2020] [ssl:warn] [pid 5276:tid 632] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:54.365456 2020] [mpm_winnt:notice] [pid 5276:tid 632] AH00455: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.5 configured -- resuming normal operations
+[Wed May 27 14:04:54.365456 2020] [mpm_winnt:notice] [pid 5276:tid 632] AH00456: Apache Lounge VC15 Server built: Apr 22 2020 11:11:00
+[Wed May 27 14:04:54.365456 2020] [core:notice] [pid 5276:tid 632] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Wed May 27 14:04:54.366452 2020] [mpm_winnt:notice] [pid 5276:tid 632] AH00418: Parent: Created child process 4612
+[Wed May 27 14:04:54.667150 2020] [ssl:warn] [pid 4612:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:54.690116 2020] [ssl:warn] [pid 4612:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 27 14:04:54.707068 2020] [mpm_winnt:notice] [pid 4612:tid 644] AH00354: Child: Starting 150 worker threads.
+[Wed May 27 14:29:38.016430 2020] [php7:error] [pid 4612:tid 1904] [client ::1:58600] script 'C:/xampp/htdocs/get_students.php' not found or unable to stat
+[Wed May 27 14:30:26.269542 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58607] PHP Notice:  Trying to get property 'num_rows' of non-object in C:\\xampp\\htdocs\\rodo\\get_students.php on line 19
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.155393 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.156390 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: id in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: firstname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:35.157385 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58610] PHP Notice:  Undefined index: lastname in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.111334 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:30:52.112331 2020] [php7:notice] [pid 4612:tid 1904] [client ::1:58617] PHP Notice:  Array to string conversion in C:\\xampp\\htdocs\\rodo\\get_students.php on line 22
+[Wed May 27 14:42:51.558859 2020] [mpm_winnt:crit] [pid 4612:tid 644] AH02538: Child: Parent process exited abruptly. Child process is ending
