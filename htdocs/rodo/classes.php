@@ -96,7 +96,7 @@ class CsvFileData {
     }
 
     function add_student_exam_data($data) {
-        array_push($this->students_results, $data)
+        array_push($this->students_results, $data);
     }
 }
 
