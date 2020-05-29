@@ -2,7 +2,7 @@
 
 <?php
 
-include 'class_definitions.php';
+include_once('class_definitions.php');
 session_start();
 $errormsg = "";
 
