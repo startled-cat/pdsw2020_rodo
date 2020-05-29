@@ -86,4 +86,32 @@ class User{
     }
 }
 
+class CsvFileData {
+    public $exam_name;
+    public $students_results;
+
+    function __construct($ex_name) {
+        $this->exam_name = $ex_name;
+        $this->students_results = array();
+    }
+
+    function add_student_exam_data($data) {
+        array_push($this->students_results, $data)
+    }
+}
+
+class StudentExamData {
+    public $index;
+    public $exam_name;
+    public $grade;
+    public $comments;
+
+    function __construct($index_nr, $ex_name, $student_grade, $grade_comments) {
+        $this->index = $index_nr;
+        $this->exam_name = $ex_name;
+        $this->grade = $student_grade;
+        $this->comments = $grade_comments;
+    }
+}
+
 ?>
