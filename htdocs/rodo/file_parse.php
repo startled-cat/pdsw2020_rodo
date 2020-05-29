@@ -24,7 +24,7 @@
         
         $exam_name = $lines[0];
         //this is utterly fucking retarded
-        if (preg_match("\s*\d{6}\s*;\s*\d{1}\s*\.?\,?\s*?\d{1}?\-?\s*;.*", $exam_name)) {
+        if (count(explode(";", $exam_name)) != 3) { //we assume that whatever is in the first line is considered as exam name if it doesn't have the same format as grade info
             $errors = "File is missing an exam name in the first line.";
             return false;
         }
@@ -34,21 +34,21 @@
         $students_exam_data = new CsvFileData($exam_name);
 
         for ($i = 1; $i < count($lines); ++$i) {
-            $grade_info_parts = explode(";");
+            $grade_info_parts = explode(";", $lines[$i]);
             //we have 3 parts of information: index number;grade;additional comments
             if (count($grade_info_parts) < 3) {
                 $errors = $errors . "Error on line $i: not enough information about student's grade\n";
                 $file_corrupted = true;
                 continue;
             }
-            $index_str = $grade_info_parts[0];
+            $index_str = trim($grade_info_parts[0]);
             if (preg_match("\d{6}", $index_str) == false) {
                 $errors = $errors . "Error on line $i: index number should be only digits, without any spaces between them\n";
                 $file_corrupted = true;
                 continue;
             }
-            $grade = $grade_info_parts[1];
-            if (preg_match("", $grade) == false) {
+            $grade = trim($grade_info_parts[1]);
+            if (preg_match("\d{1}\s*[\.\,]?\s*\d?", $grade) == false) {
                 $errors = $errors . "Error on line $i: Wrong grade format: should be a digit and optionally a '-', '.digit' or ',digit', e.g. 4.5, 4-, 3,5\n";
                 $file_corrupted = true;
                 continue;
