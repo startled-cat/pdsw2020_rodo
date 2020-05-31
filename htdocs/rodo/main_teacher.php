@@ -22,6 +22,8 @@
   <?php
 
   include_once('classes.php');
+  include_once('database_connection.php');
+
   session_start();
   if(isset($_SESSION["user"])){
     $user = $_SESSION["user"];
@@ -123,142 +125,68 @@
         Recent marks:
       </h2>
 
+      <?php
+        $tasks_query = "select task from rodo.grades where teacher_id = ".$user->id." group by task;";
+        //echo $query;
+        $marks_tasks_result = $conn->query($tasks_query);
+        if ($marks_tasks_result->num_rows > 0) {
+          // output data of each row
+          $i = 0;
+          while($marks_tasks_row = $marks_tasks_result->fetch_assoc()) {
+            echo '
+            <div class="card clickable" data-toggle="collapse"  href="#collapse_'.$i.'" aria-expanded="true" aria-controls="collapse_'.$i.'">
+            <div class="card-body">
+              <h5 class="card-title">'. $marks_tasks_row["task"].'</h5>
+              <div class="collapse multi-collapse" id="collapse_'.$i.'">
+                <p class="card-text">';
 
-      <div class="card clickable" data-toggle="collapse"  href="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-        <div class="card-body">
-          <h5 class="card-title">exam</h5>
-          <div class="collapse multi-collapse" id="collapse_1">
-            <p class="card-text">
-
+            //echo "task: " . $marks_tasks_row["task"]."<br>";
+            $marks_query = "SELECT * FROM rodo.v_students_grades where teacher_id = ".$user->id." and task = '".$marks_tasks_row["task"]."';";
+            //echo $marks_query;
+            $marks_result = $conn->query($marks_query);
+            if ($marks_result->num_rows > 0) {
+              echo '
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Index</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Mark</th>
+                    <th scope="col">index</th>
+                    <th scope="col">mark</th>
+                    <th scope="col">comment</th>
+                    <th scope="col">date</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody>';
+              // output data of each row
+              while($marks_row = $marks_result->fetch_assoc()) {
+                echo "
                   <tr>
-                    <th scope="row">1</th>
-                    <td>242000</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>213769</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>3.5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>299888</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>5</td>
-                  </tr>
-                </tbody>
-              </table>
+                      <th>".$marks_row["student_number"]."</th>
+                      <td>".$marks_row["value"]."</td>
+                      <td>".$marks_row["comment"]."</td>
+                      <td>".$marks_row["date"]."</td>
+                    </tr>
+                  ";
+              }
+              echo '</tbody>
+              </table>';
+            }
+            echo '
+                  </p>
+                  <a href="#" class="btn btn-danger">delete all</a>
+                </div>
 
-            </p>
-            <a href="#" class="btn btn-danger">delete all</a>
-          </div>
+              </div>
+            </div>
+            ';
+            $i += 1;
+          }
+          
+        } else {
+          echo "0 results";
+        }
+      ?>
 
-        </div>
-      </div>
-      <div class="card clickable" data-toggle="collapse"  href="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-        <div class="card-body">
-          <h5 class="card-title">homework - excercise 2</h5>
-          <div class="collapse multi-collapse" id="collapse_2">
-            <p class="card-text">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Index</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Mark</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>242000</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>213769</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>3.5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>299888</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>5</td>
-                  </tr>
-                </tbody>
-              </table>
-            </p>
-            <a href="#" class="btn btn-danger">delete all</a>
-          </div>
-        </div>
-      </div>
-      <div class="card clickable" data-toggle="collapse"  href="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-        <div class="card-body">
-          <h5 class="card-title">exam 2 - resit</h5>
-          <div class="collapse multi-collapse" id="collapse_3">
-            <p class="card-text">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Index</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Mark</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>242000</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>213769</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>3.5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>299888</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>5</td>
-                  </tr>
-                </tbody>
-              </table>
-            </p>
-            <a href="#" class="btn btn-danger">delete all</a>
-          </div>
-        </div>
-      </div>
+      
 
     </div>
 
