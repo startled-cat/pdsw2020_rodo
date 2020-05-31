@@ -4,28 +4,23 @@
 
     function parse_csv_file($filename, &$errors) {
 
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        if ($extension != "csv") {
-            $errors = "Wrong file extension, only .csv files are valid.";
-            return false;
-        }
-
         $file_contents = file_get_contents($filename);
         if ($file_contents == false) {
-            $errors = "Could not read file $filename.";
+            $errors = "Could not read file $filename.<br>";
             return false;
         }
         
         $lines = explode("\n", $file_contents);
         if (count($lines) == 0) {
-            $errors = "File is empty!";
+            $errors = "File is empty!<br>";
             return false;
         }
         
         $exam_name = $lines[0];
         //this is utterly fucking retarded
-        if (count(explode(";", $exam_name)) != 3) { //we assume that whatever is in the first line is considered as exam name if it doesn't have the same format as grade info
-            $errors = "File is missing an exam name in the first line.";
+        $cnt = count(explode(";", $exam_name));
+        if ($cnt != 1) { //we assume that whatever is in the first line is considered as exam name if it doesn't have the same format as grade info
+            $errors = "File is missing an exam name in the first line.<br>";
             return false;
         }
 
@@ -37,19 +32,19 @@
             $grade_info_parts = explode(";", $lines[$i]);
             //we have 3 parts of information: index number;grade;additional comments
             if (count($grade_info_parts) < 3) {
-                $errors = $errors . "Error on line $i: not enough information about student's grade\n";
+                $errors = $errors . "Error on line $i: not enough information about student's grade<br>";
                 $file_corrupted = true;
                 continue;
             }
             $index_str = trim($grade_info_parts[0]);
-            if (preg_match("\d{6}", $index_str) == false) {
-                $errors = $errors . "Error on line $i: index number should be only digits, without any spaces between them\n";
+            if (preg_match("/\d{6}$/", $index_str) == false) {
+                $errors = $errors . "Error on line $i: index number should be only digits, without any spaces between them, got $index_str<br>";
                 $file_corrupted = true;
                 continue;
             }
             $grade = trim($grade_info_parts[1]);
-            if (preg_match("\d{1}\s*[\.\,]?\s*\d?", $grade) == false) {
-                $errors = $errors . "Error on line $i: Wrong grade format: should be a digit and optionally a '-', '.digit' or ',digit', e.g. 4.5, 4-, 3,5\n";
+            if (preg_match("/^\d{1}(((\.|\,)\d{1})|-)?$/", $grade) == false) {
+                $errors = $errors . "Error on line $i: Wrong grade format: should be a digit and optionally a '-', '.digit' or ',digit', e.g. 4.5, 4-, 3,5, got $grade<br>";
                 $file_corrupted = true;
                 continue;
             }
