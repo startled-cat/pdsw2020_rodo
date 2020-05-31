@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,12 +25,39 @@
   session_start();
   if(isset($_SESSION["user"])){
     $user = $_SESSION["user"];
+    if(!$user->is_teacher){
+      echo "<b> u is nto teacher</b>";
+    //redirect to index?
+    }
   }else{
     echo "<b> u r not logged, go away!</b>";
     //redirect to index?
   }
+  if(isset($_POST) && isset($_POST["submit"]) ){
+    echo "<div class=\"alert alert-info\">";
+    if($_POST["submit"] == ""){
+      // ------------------------------------------------------------------------------ just display file here
+      include "file_display.php";
+    }else{
+      //upload file
+      include "file_upload.php";
+    }
+    echo "</div>";
+  }
 
 ?>
+<?PHP
+    if(isset($table) && $table != ""){
+      echo "
+      <script src=\"script/jquery.min.js\"></script>
+
+      <script>
+        $(window).on('load',function(){
+          $('#uploadModal').modal('show');
+        });
+      </script>";
+    }
+  ?>
 </head>
 
 <body>
@@ -268,8 +296,10 @@
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+  
+  <div class="modal fade" 
+  id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" 
+  aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -278,14 +308,29 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form>
+        <form action="main_teacher.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="asd", value="ASD">
+          <div class="modal-body">
+          
             <div class="form-group">
-              <label for="exampleFormControlFile1">CSV file input:</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              <label for="file">CSV file input:</label>
+              <input required type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" >
+              <script>
+                const fileSelector = document.getElementById('fileToUpload');
+                fileSelector.addEventListener('change', (event) => {
+                  const fileList = event.target.files;
+                  console.log(fileList);
+                });
+              </script>
               Mark title:
-              <input class="form-control" type="text" placeholder="from file or enter manually">
+              <input name="mark_name" id="mark_name" class="form-control" type="text" <?php if(isset($mark_title) && $mark_title != "") echo "value=\"$mark_title\""; ?>placeholder="from file or enter manually">
               View:
+              <?PHP
+                if(isset($table) && $table != ""){
+                  echo $table;
+                }
+              ?>
+              <!--
               <table class="table table-striped">
                 <thead>
                   <tr>
@@ -312,13 +357,16 @@
                   </tr>
                 </tbody>
               </table>
+              -->
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Send</button>
-        </div>
+          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" name="submit" value="" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Load</button>
+            <button type="submit" name="submit" value="yez" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Send</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -336,7 +384,7 @@
           <form>
             <div class="form-group">
               <label for="exampleFormControlFile1">CSV file input:</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              <input required type="file" class="form-control-file" id="exampleFormControlFile1">
               View:
               <table class="table table-striped">
                 <thead>

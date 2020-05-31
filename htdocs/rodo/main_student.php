@@ -23,6 +23,10 @@
   session_start();
   if(isset($_SESSION["user"])){
     $user = $_SESSION["user"];
+    if(!$user->is_student){
+      echo "<b> u is nto studnet</b>";
+    //redirect to index?
+    }
   }else{
     echo "<b> u r not logged, go away!</b>";
     //redirect to index?

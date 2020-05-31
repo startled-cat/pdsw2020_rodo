@@ -53,27 +53,31 @@
         $user->set_login($login);
 
     if($_POST["type"] == "teacher"){
-    
-        if($user->login_as_teacher($pass)){
-            //set user as session variable
-            $_SESSION["user"] = $user;
-            //echo 'logged in, redirecting...';
-            header('Location: ' . "main_teacher.php", true, $permanent ? 301 : 302);
+      $errormsg = $user->login_as_teacher($pass);
+      if($errormsg == ""){
+          //set user as session variable
+          $user->is_teacher = true;
+          $_SESSION["user"] = $user;
+          //print_r( $user);
+          //echo 'logged in, redirecting...';
+          header('Location: ' . "main_teacher.php", true, $permanent ? 301 : 302);
         }else{
-            $errormsg = 'user does not exist or wrong password';
-            echo $errormsg;
+          $errormsg = 'user does not exist or wrong password';
+          echo $errormsg;
         }
     
     }elseif($_POST["type"] == "student"){
 
-        if($user->login_as_student($pass)){
-            //set user as session variable
-            $_SESSION["user"] = $user;
-            //echo 'logged in, redirecting...';
-            //print_r($_SESSION["user"]);
-            header('Location: ' . "main_student.php", true, $permanent ? 301 : 302);
+      $errormsg = $user->login_as_student($pass);
+        if($errormsg == ""){
+          $user->is_student = true;
+          //set user as session variable
+          $_SESSION["user"] = $user;
+          //echo 'logged in, redirecting...';
+          //print_r($_SESSION["user"]);
+          header('Location: ' . "main_student.php", true, $permanent ? 301 : 302);
         }else{
-            $errormsg = 'user does not exist or wrong password';
+            //$errormsg = 'user does not exist or wrong password';
             echo $errormsg;
         }
     
@@ -135,9 +139,9 @@
       <!-- Login Form -->
       <form method="post" action="index.php">
 
-        <input type="text" id="login" class="form-control fadeIn second" name="login" placeholder="login">
-        <input type="password" id="password" class="form-control fadeIn third" name="password" placeholder="password">
-        <input type="radio" id="student" name="type" value="student" selected>
+        <input required type="text" id="login" class="form-control fadeIn second" name="login" placeholder="login">
+        <input required type="password" id="password" class="form-control fadeIn third" name="password" placeholder="password">
+        <input required type="radio" id="student" name="type" value="student" selected>
           <label for="student">student</label>
         <input type="radio" id="teacher" name="type" value="teacher">
           <label for="teacher">teacher</label>
