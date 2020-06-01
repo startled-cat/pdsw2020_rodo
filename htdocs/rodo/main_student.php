@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -58,6 +57,8 @@
 
 ?>
 </head>
+
+
 
 <body>
 
@@ -235,14 +236,14 @@
                 <input type="password" class="form-control" id="oldpass">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">New parrword:</label>
+                <label for="message-text" class="col-form-label">New password:</label>
                 <input type="password" class="form-control" id="newpass">
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Change</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0" id="changePasswordButton">Change</button>
           </div>
         </div>
       </div>
@@ -264,7 +265,31 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+  <script>
+    function sendChangePasswordRequest() {
+      var oldPass = document.getElementById("oldpass").value;
+      var newPass = document.getElementById("newpass").value;
+      var login = "<?php Print($user->login); ?>";//this is... weird, but i dont know how to do it better
 
+      $.ajax({
+        url: "change_password.php",
+        type: "post",
+        datatype: "application/json",
+        data: {user_type: "student", login: login, old_password: oldPass, new_password: newPass},
+        success: function(r) {
+          console.log(r);
+          alert(JSON.parse(r).response);
+        },
+        error: function(error) {
+          alert("Ajax request error");
+          console.log(error);
+        }
+      });
+    }
+    $("#changePasswordButton").click(e => {
+      sendChangePasswordRequest();
+    });
+  </script>
 </body>
 
 </html>
