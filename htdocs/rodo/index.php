@@ -63,7 +63,7 @@
           header('Location: ' . "main_teacher.php", true, $permanent ? 301 : 302);
         }else{
           $errormsg = 'user does not exist or wrong password';
-          echo $errormsg;
+          //echo $errormsg;
         }
     
     }elseif($_POST["type"] == "student"){
@@ -78,7 +78,7 @@
           header('Location: ' . "main_student.php", true, $permanent ? 301 : 302);
         }else{
             //$errormsg = 'user does not exist or wrong password';
-            echo $errormsg;
+            //echo $errormsg;
         }
     
     
@@ -89,6 +89,13 @@
 </head>
 
 <body>
+  <div class="alert alert-danger">
+    <?php 
+    if(isset($errormsg)){
+      echo $errormsg;
+    }
+    ?>
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">

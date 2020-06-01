@@ -25,17 +25,50 @@
     $user = $_SESSION["user"];
     if(!$user->is_student){
       echo "<b> u is nto studnet</b>";
+      header('Location: ' . "index.php", true, $permanent ? 301 : 302);
+
     //redirect to index?
     }
   }else{
     echo "<b> u r not logged, go away!</b>";
+    header('Location: ' . "index.php", true, $permanent ? 301 : 302);
+
     //redirect to index?
+  }
+
+  if(isset($_POST) && isset($_POST['submit']) ){
+    if( $_POST['submit'] == "student_delete_grade" && isset($_POST['grade_to_delete'])){
+      //delete given grade
+      $grade_id = $_POST['grade_to_delete'];
+      $delete_grade_sql =  "DELETE FROM rodo.grades WHERE id = ".$grade_id.";";
+      //echo $delete_grade_sql;
+      include_once('database_connection.php');
+      $delete_result = $conn->query($delete_grade_sql);
+      //$delete_result = false;
+      if(!$delete_result){
+          $error = "error while trying to delete grade ";
+      }else{
+          $success = "successfully deleted grade ";
+      }
+
+    }
+    
+
   }
 
 ?>
 </head>
 
 <body>
+
+<?php 
+  if(isset($error)) {
+    echo "<div class=\"alert alert-danger\">".$error."</div>";
+  }
+  if(isset($success)){
+    echo "<div class=\"alert alert-success\">".$success."</div>";
+  }
+?>
 
   <div class="d-flex" id="wrapper">
 
@@ -92,8 +125,35 @@
         <h2 class="text-center recent-marks">
           Recent marks:
         </h2>
+        <?php
+          $grades_sql = "SELECT * FROM rodo.v_students_grades WHERE student_id = ".$user->id.";";
+          include_once('database_connection.php');
+          $grades_result = $conn->query($grades_sql);
+          if ($grades_result->num_rows > 0) {
+            // output data of each row
+            $i = 0;
+            while($grades_row = $grades_result->fetch_assoc()) {
+              echo '
+              <div class="card clickable" data-toggle="collapse"  href="#collapse_'.$i.'" aria-expanded="true" aria-controls="collapse_'.$i.'">
+                <div class="card-body">
+                  <h5 class="card-title">'.$grades_row['value']." - ".$grades_row['task'].'  <span class="badge badge-primary">New</span></h5>
+                  <div class="collapse multi-collapse" id="collapse_'.$i.'">
+                    <p class="card-text">data: '.$grades_row['date'].'<br>komentarz: '.$grades_row['comment'].'<br><i>'.$grades_row['teacher_name'].'</i></p>
+                    <form action="main_student.php" method="post">
+                      <input type="hidden" name="grade_to_delete" value="'.$grades_row['id'].'">
+                      <button type="submit" name="submit" value="student_delete_grade" class="btn btn-danger" >Delete</button>
+                    </form>
+                  </div>
 
+                </div>
+              </div>
+              ';
+              $i += 1;
+            }
+          }
+        ?>
 
+        <!--
         <div class="card clickable" data-toggle="collapse"  href="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
           <div class="card-body">
             <h5 class="card-title">5 - PDSwww <span class="badge badge-primary">New</span></h5>
@@ -123,6 +183,7 @@
           </div>
         </div>
       </div>
+      -->
 
 
     </div>

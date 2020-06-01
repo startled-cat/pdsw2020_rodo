@@ -19,6 +19,7 @@
 
   
   <link href="vendor/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
   <?php
 
   include_once('classes.php');
@@ -29,20 +30,27 @@
     $user = $_SESSION["user"];
     if(!$user->is_teacher){
       echo "<b> u is nto teacher</b>";
+      header('Location: ' . "index.php", true, $permanent ? 301 : 302);
+
     //redirect to index?
     }
   }else{
     echo "<b> u r not logged, go away!</b>";
+    header('Location: ' . "index.php", true, $permanent ? 301 : 302);
+
     //redirect to index?
   }
   if(isset($_POST) && isset($_POST["submit"]) ){
     echo "<div class=\"alert alert-info\">";
-    if($_POST["submit"] == ""){
-      // ------------------------------------------------------------------------------ just display file here
+    if($_POST["submit"] == "file_display"){
+      // ------------------------------------------------------------------------------ just display csv file here
       include "file_display.php";
-    }else{
-      //upload file
+    }elseif($_POST["submit"] == "file_upload"){
+      // ------------------------------------------------------------------------------ just uplaod csvc file 
       include "file_upload.php";
+    }elseif($_POST["submit"] == "teacher_grades_delete"){
+      // ------------------------------------------------------------------------------ delete grades from task
+      include "teacher_grades_delete.php";
     }
     echo "</div>";
   }
@@ -172,7 +180,10 @@
             }
             echo '
                   </p>
-                  <a href="#" class="btn btn-danger">delete all</a>
+                  <form action="teacher_grades_delete.php" method="post">
+                    <input type="hidden" name="task_to_delete" value="'.$marks_tasks_row["task"].'">
+                    <button type="submit" name="submit" value="teacher_delete_grades" class="btn btn-danger" >Delete</button>
+                  </form>
                 </div>
 
               </div>
@@ -291,8 +302,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" name="submit" value="" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Load</button>
-            <button type="submit" name="submit" value="yez" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Send</button>
+            <button type="submit" name="submit" value="file_display" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Load</button>
+            <button type="submit" name="submit" value="file_upload" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Send</button>
           </div>
         </form>
       </div>
