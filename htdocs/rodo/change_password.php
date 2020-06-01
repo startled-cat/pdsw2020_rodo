@@ -10,19 +10,21 @@
 
         $query = "select * from rodo.";
         $table_name = "";
+        $name_field = "";
         if ($_POST["user_type"] == "student") {
             $table_name = "students";
+            $name_field = "number";
         } else if ($_POST["user_type"] == "teacher") {
             $table_name = "teachers";
+            $name_field = "login";
         } else {
             $response_array["response"] = "Wrong user type";
             echo json_encode($response_array);
             exit(1);
         }
-
         $login = $_POST["login"];
         $old_pass = $_POST["old_password"];
-        $query = $query . $table_name . " where number like '$login' and password like '$old_pass';";
+        $query = $query . $table_name . " where $name_field like '$login' and password like '$old_pass';";
         $result = $connection->query($query);
         if (!$result || $result->num_rows <= 0) {
             $response_array["response"] = "Wrong password supplied! No user with that password found. Supply valid one!";
@@ -31,7 +33,7 @@
         }
 
         $new_pass = $_POST["new_password"];
-        $update_query = "update rodo." . $table_name . " set password = '$new_pass' where number like '$login' and password like '$old_pass';";
+        $update_query = "update rodo." . $table_name . " set password = '$new_pass' where $name_field like '$login' and password like '$old_pass';";
         $connection->query($update_query);
         if (mysqli_affected_rows($connection) == 1) {
             $response_array["response"] = "Password changed successfully!";

@@ -81,6 +81,7 @@
         <a href="#" class="list-group-item list-group-item-action bg-light" data-toggle="modal" data-target="#uploadModal">upload grades</a>
         <a href="#" class="list-group-item list-group-item-action bg-light" data-toggle="modal" data-target="#generateModal">generate accounts</a>
         <a href="#" data-toggle="modal" data-target="#exampleModal" class="list-group-item list-group-item-action bg-light">report a bug</a>
+        <a href="#" data-toggle="modal" data-target="#changePassModal" class="list-group-item list-group-item-action bg-light">change password</a>
         <a href="logout.php" class="list-group-item list-group-item-action bg-light">logout</a>
       </div>
     </div>
@@ -358,6 +359,35 @@
     </div>
   </div>
 
+  <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="changePassModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="changePassModalLabel">Change password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Old password:</label>
+                <input type="password" class="form-control" id="oldpass">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">New password:</label>
+                <input type="password" class="form-control" id="newpass">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0" id="changePasswordButton">Change</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </div>
   <!-- /#wrapper -->
@@ -371,6 +401,30 @@
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+  <script>
+    function sendChangePasswordRequest() {
+      var oldPass = document.getElementById("oldpass").value;
+      var newPass = document.getElementById("newpass").value;
+      var login = "<?php Print($user->login); ?>";//this is... weird, but i dont know how to do it better
+      $.ajax({
+        url: "change_password.php",
+        type: "post",
+        datatype: "application/json",
+        data: {user_type: "teacher", login: login, old_password: oldPass, new_password: newPass},
+        success: function(r) {
+          console.log(r);
+          alert(JSON.parse(r).response);
+        },
+        error: function(error) {
+          alert("Ajax request error");
+          console.log(error);
+        }
+      });
+    }
+    $("#changePasswordButton").click(e => {
+      sendChangePasswordRequest();
     });
   </script>
 
