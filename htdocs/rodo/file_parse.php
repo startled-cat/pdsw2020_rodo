@@ -55,4 +55,59 @@
 
         return $students_exam_data;
     }
+
+
+    function accounts_parse_csv_file($filename, &$errors) {
+
+        $file_contents = file_get_contents($filename);
+        if ($file_contents == false) {
+            $errors = "Could not read file, maybe file is empty.<br>";
+            return false;
+        }
+        
+        $lines = explode("\n", $file_contents);
+        if (count($lines) == 0) {
+            $errors = "File is empty!<br>";
+            return false;
+        }
+
+        $file_corrupted = false;
+        
+
+        for ($i = 0; $i < count($lines); ++$i) {
+            $lines[$i] = str_replace (array("\r\n", "\n", "\r"), '', $lines[$i]);
+            
+
+            if (preg_match('/^[0-9\n]*$/', $lines[$i])){
+                //echo $lines[$i].' - good line<br>';
+            }else{
+                $file_corrupte = true;
+                //echo '"'.$lines[$i].'" - error<br>';
+                $errors = "Error in line ".($i+1)." : '".$lines[$i]."' - student's index number should contain just numbers<br>";
+                return false;
+            }
+            if(strlen($lines[$i]) != 6 && strlen($lines[$i]) != 0){
+                $file_corrupte = true;
+                //echo '"'.$lines[$i].'" - error<br>';
+                $errors = "Error in line ".($i+1)." : '".$lines[$i]."' - student's index number is ".strlen($lines[$i])." and not 6 digits long<br>";
+                return false;
+            }
+
+            if(strlen($lines[$i]) == 0){
+                continue;//skip empty lines from checking duplicates 
+            }
+            //check if duplicate
+            for ($j = 0; $j < $i; ++$j) {
+                if($lines[$j] == $lines[$i]){
+                    $file_corrupte = true;
+                    //echo '"'.$lines[$i].'" - error<br>';
+                    $errors = "Error in line ".($i+1)." : '".$lines[$i]."' - student's index number is duplicated. Previouosly seen in line $j<br>";
+                    return false;
+                }
+            }
+
+        }
+
+        return $lines;
+    }
 ?>

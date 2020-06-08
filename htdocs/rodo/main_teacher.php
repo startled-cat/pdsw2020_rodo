@@ -17,7 +17,7 @@
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
-  
+  <script src="script/jquery.min.js"></script>
   <link href="vendor/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
   <?php
@@ -40,7 +40,9 @@
 
     //redirect to index?
   }
+  /*
   if(isset($_POST) && isset($_POST["submit"]) ){
+    
     echo "<div class=\"alert alert-info\">";
     if($_POST["submit"] == "file_display"){
       // ------------------------------------------------------------------------------ just display csv file here
@@ -51,22 +53,39 @@
     }elseif($_POST["submit"] == "teacher_grades_delete"){
       // ------------------------------------------------------------------------------ delete grades from task
       include "teacher_grades_delete.php";
+    }elseif($_POST["submit"] == "accounts_file_upload"){
+      // ------------------------------------------------------------------------------ just uplaod accounts file 
+      
+      include "generate_accounts.php";
+
+    }elseif($_POST["submit"] == "accounts_file_check"){
+      // ------------------------------------------------------------------------------ just check accounts file 
+      //include "generate_accounts.php";
     }
     echo "</div>";
   }
+  */
 
 ?>
 <?PHP
     if(isset($table) && $table != ""){
       echo "
-      <script src=\"script/jquery.min.js\"></script>
-
       <script>
         $(window).on('load',function(){
           $('#uploadModal').modal('show');
         });
       </script>";
     }
+
+    if(isset($accounts_table) && $accounts_table != ""){
+      echo "
+      <script>
+        $(window).on('load',function(){
+          $('#generateModal').modal('show');
+        });
+      </script>";
+    }
+    
   ?>
 </head>
 
@@ -93,37 +112,36 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-light" id="menu-toggle"><span class="oi oi-menu"></span></button>
         <?php echo "Hello $user->name " ?>
-<!--
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        -->
+
       </nav>
 
 
       <div class="container-fluid">
+      <?php
+      if(isset($_POST) && isset($_POST["submit"]) ){
+        
+        echo "<div class=\"alert alert-info\">";
+        if($_POST["submit"] == "file_display"){
+          // ------------------------------------------------------------------------------ just display csv file here
+          include "file_display.php";
+        }elseif($_POST["submit"] == "file_upload"){
+          // ------------------------------------------------------------------------------ just uplaod csvc file 
+          include "file_upload.php";
+        }elseif($_POST["submit"] == "teacher_grades_delete"){
+          // ------------------------------------------------------------------------------ delete grades from task
+          include "teacher_grades_delete.php";
+        }elseif($_POST["submit"] == "accounts_file_upload"){
+          // ------------------------------------------------------------------------------ just uplaod accounts file 
+          
+          include "generate_accounts.php";
+
+        }elseif($_POST["submit"] == "accounts_file_check"){
+          // ------------------------------------------------------------------------------ just check accounts file 
+          include "generate_accounts.php";
+        }
+        echo "</div>";
+      }
+      ?>
         
       
       <button type="button" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#uploadModal">Upload marks</button>
@@ -211,9 +229,7 @@
     include "bug_report_form.php";
     ?>
   
-  <div class="modal fade" 
-  id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" 
-  aria-hidden="true">
+  <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -267,41 +283,48 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form>
+        <form action="main_teacher.php" method="post" enctype="multipart/form-data">
+          <div class="modal-body">
             <div class="form-group">
-              <label for="exampleFormControlFile1">CSV file input:</label>
-              <input required type="file" class="form-control-file" id="exampleFormControlFile1">
-              View:
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Index</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>242000</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>213769</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>299888</td>
-                  </tr>
-                </tbody>
-              </table>
+              <label for="file">File input:</label><br/>
+              <input required type="file" accept="txt,.csv"  class="form-control-file" name="accounts_fileToUpload" id="accounts_fileToUpload" >
+              <br/>
+              <label for="expire-date">Accounts expire date:</label><br/>
+              <input required type="date" id="expire-date" name="expire-date">   
+              <hr>
+              <script>
+                const accounts_fileSelector = document.getElementById('accounts_fileToUpload');
+                accounts_fileSelector.addEventListener('change', (event) => {
+                  const accounts_fileList = event.target.files;
+                  console.log(accounts_fileList);
+                });
+              </script>
+              
+              <?PHP
+                if(isset($accounts_table) && $accounts_table != ""){
+                  echo "View:<br/>";
+                  echo $accounts_table;
+                  if(isset($accounts_result) && $accounts_result != ""){
+                    echo '<div class="alert">'.$accounts_result.'</div>';
+                  }
+                }else{
+                  echo "example file contents:<br/>";
+                  echo "<div class=\"example-csv-accounts\" style=\"padding:10px; background-color:#c0c0c0;\">
+                          123456<br/>
+                          123457<br/>
+                          123458<br/>
+                          123459<br/>
+                        </div>";
+                }
+              ?>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-secondary btn-lg btn-block " style="margin-top:0">Generate</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" name="submit" value="accounts_file_check" id="accounts_check" class="btn btn-secondary btn-lg btn-block " style="margin-top:0">Check</button>
+            <button type="submit" name="submit" value="accounts_file_upload" id="accounts_generate" class="btn btn-secondary btn-lg btn-block " style="margin-top:0">Generate</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -346,9 +369,11 @@
         }
       });
     }
+
     $("#changePasswordButton").click(e => {
       sendChangePasswordRequest();
     });
+
   </script>
 
 </body>

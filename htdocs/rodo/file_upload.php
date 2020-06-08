@@ -7,8 +7,6 @@
     }else{
         echo "<b> u r not logged, go away!</b>";
         header('Location: ' . "index.php", true, $permanent ? 301 : 302);
-
-        //redirect to index?
     }
 
     $mark_title = "";
@@ -27,10 +25,10 @@
         $errors = "";
         $result = parse_csv_file($_FILES["fileToUpload"]["tmp_name"], $errors);
         if ($result == false) {
-            echo "something went wrong";
-            echo "<br>";
+            //echo "something went wrong";
+            //echo "<br>";
             echo $errors;
-            exit(1);
+            //exit(1);
         }
         else {
             if ($errors != "") {
