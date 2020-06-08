@@ -89,13 +89,13 @@
 </head>
 
 <body>
-  <div class="alert alert-danger">
-    <?php 
-    if(isset($errormsg)){
-      echo $errormsg;
-    }
-    ?>
-  </div>
+  
+  <?php 
+  if(isset($errormsg)){
+    echo '<div class="alert alert-danger">'.$errormsg.'</div>';
+  }
+  ?>
+  
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">

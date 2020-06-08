@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - number: " . $row["number"]. " ; password" . $row["password"]. " ; expire_date" . $row["expire_date"]."<br>";
+    echo "id: " . $row["id"]. " - number: " . $row["number"]. " ; password: " . $row["password"]. " ; expire_date: " . $row["expire_date"]."<br>";
   }
 } else {
   echo "0 results";

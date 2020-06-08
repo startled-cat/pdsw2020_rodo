@@ -207,35 +207,9 @@
 
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name" value="bugreporting@example.com">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">Send message</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <?php
+    include "bug_report_form.php";
+    ?>
   
   <div class="modal fade" 
   id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" 
@@ -270,34 +244,7 @@
                   echo $table;
                 }
               ?>
-              <!--
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Index</th>
-                    <th scope="col">Mark</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>242000</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>213769</td>
-                    <td>3.5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>299888</td>
-                    <td>5</td>
-                  </tr>
-                </tbody>
-              </table>
-              -->
+              
             </div>
           
           </div>
@@ -359,34 +306,10 @@
     </div>
   </div>
 
-  <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="changePassModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="changePassModalLabel">Change password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Old password:</label>
-                <input type="password" class="form-control" id="oldpass">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">New password:</label>
-                <input type="password" class="form-control" id="newpass">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0" id="changePasswordButton">Change</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+  <?PHP
+    include "change_password_form.php";
+  ?>
 
 
 </div>

@@ -124,7 +124,7 @@
       <div class="container-fluid">
 
         <h2 class="text-center recent-marks">
-          Recent marks:
+          Your recent marks:
         </h2>
         <?php
           $grades_sql = "SELECT * FROM rodo.v_students_grades WHERE student_id = ".$user->id.";";
@@ -191,63 +191,13 @@
     <!-- /#page-content-wrapper -->
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name" value="bugreporting@example.com">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0">Send message</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php
+    include "bug_report_form.php";
+    ?>
 
-    <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="changePassModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="changePassModalLabel">Change password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Old password:</label>
-                <input type="password" class="form-control" id="oldpass">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">New password:</label>
-                <input type="password" class="form-control" id="newpass">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0" id="changePasswordButton">Change</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?PHP
+      include "change_password_form.php";
+    ?>
 
 
 
