@@ -15,4 +15,8 @@ function randomPassword($length) {
     return implode($pass); //turn the array into a string
 }
 
+function encryptPassword($pass){
+    return md5($pass);
+}
+
 ?>

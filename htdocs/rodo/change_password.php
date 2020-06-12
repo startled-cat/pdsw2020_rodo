@@ -1,4 +1,5 @@
 <?php
+    include_once('functions.php');
     if (isset($_POST) && isset($_POST["user_type"]) && isset($_POST["login"]) && isset($_POST["old_password"]) && isset($_POST["new_password"])) {
         $connection = new mysqli("localhost", "root", "");
         if ($connection->connect_error) {
@@ -24,6 +25,7 @@
         }
         $login = $_POST["login"];
         $old_pass = $_POST["old_password"];
+        $old_pass = encryptPassword($old_pass);
         $query = $query . $table_name . " where $name_field like '$login' and password like '$old_pass';";
         $result = $connection->query($query);
         if (!$result || $result->num_rows <= 0) {
@@ -33,6 +35,7 @@
         }
 
         $new_pass = $_POST["new_password"];
+        $new_pass = encryptPassword($new_pass);
         $update_query = "update rodo." . $table_name . " set password = '$new_pass' where $name_field like '$login' and password like '$old_pass';";
         $connection->query($update_query);
         if (mysqli_affected_rows($connection) == 1) {

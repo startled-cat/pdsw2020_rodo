@@ -22,6 +22,8 @@ class User{
         //echo ' passform = '.$password;
         
         include 'database_connection.php';
+        
+        include_once('functions.php');
         //echo "Connected successfully";
         //sanitize $this->login todo
         $this->login = $conn->real_escape_string($this->login);
@@ -32,7 +34,7 @@ class User{
                 $row = $result->fetch_assoc();
                 //echo ' passsql = '.$row["password"];
                 
-                if($password == $row["password"]){
+                if(encryptPassword($password) == $row["password"]){
                     $is_student = true;
                     $this->id = $row["id"];
                     $this->name = $row["number"];
@@ -52,6 +54,7 @@ class User{
         
         
         include 'database_connection.php';
+        include_once('functions.php');
         //echo "Connected successfully";
         //sanitize $this->login todo
         $this->login = $conn->real_escape_string($this->login);
@@ -60,7 +63,7 @@ class User{
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
-                if($password == $row["password"]){
+                if(encryptPassword($password) == $row["password"]){
                     $is_teacher = true;
                     $this->id = $row["id"];
                     $this->name = $row["display_name"];

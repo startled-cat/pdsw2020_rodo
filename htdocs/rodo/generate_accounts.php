@@ -66,6 +66,7 @@ if (isset($_FILES) && isset($_POST) && isset($_FILES["accounts_fileToUpload"])) 
                 $sql_select = $sql_select."'$student_nr',";//TODO clean bc sql injection
 
                 $password = generate_password($student_nr);
+                $enc_password = encryptPassword($password);
 
                 $accounts_table = $accounts_table.'
                 <tr>
@@ -74,7 +75,7 @@ if (isset($_FILES) && isset($_POST) && isset($_FILES["accounts_fileToUpload"])) 
                     <td>'.$expire_date.'</td>
                 </tr>';
                 
-                $sql_insert = $sql_insert."('$student_nr', '$password', '$expire_date'),";//TODO clean bc sql injection
+                $sql_insert = $sql_insert."('$student_nr', '$enc_password', '$expire_date'),";//TODO clean bc sql injection
             }
             $sql_insert = substr($sql_insert, 0, strlen($sql_insert)-1); 
             $sql_select = substr($sql_select, 0, strlen($sql_select)-1); 

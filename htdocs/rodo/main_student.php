@@ -36,18 +36,28 @@
   }
 
   if(isset($_POST) && isset($_POST['submit']) ){
+    include_once('database_connection.php');
     if( $_POST['submit'] == "student_delete_grade" && isset($_POST['grade_to_delete'])){
       //delete given grade
       $grade_id = $_POST['grade_to_delete'];
       $delete_grade_sql =  "DELETE FROM rodo.grades WHERE id = ".$grade_id.";";
       //echo $delete_grade_sql;
-      include_once('database_connection.php');
+      
       $delete_result = $conn->query($delete_grade_sql);
       //$delete_result = false;
       if(!$delete_result){
           $error = "error while trying to delete grade ";
       }else{
           $success = "successfully deleted grade ";
+      }
+    }else if( $_POST['submit'] == "student_mark_as_seen_grade" && isset($_POST['grade_seen'])){
+      $grade_id = $_POST['grade_seen'];
+      $update_seen_grades_sql = "UPDATE `rodo`.`grades` SET `rodo`.`grades`.`seen` = 1 WHERE `rodo`.`grades`.`student_id` = ".$user->id." AND `rodo`.`grades`.`id` = ".$grade_id.";";
+      $update_result = $conn->query($update_seen_grades_sql);
+      if(!$update_result){
+        $error = "error while marking grade as seen";
+      }else{
+        //$success = "marked grade as seen";
       }
 
     }
@@ -61,15 +71,6 @@
 
 
 <body>
-
-<?php 
-  if(isset($error)) {
-    echo "<div class=\"alert alert-danger\">".$error."</div>";
-  }
-  if(isset($success)){
-    echo "<div class=\"alert alert-success\">".$success."</div>";
-  }
-?>
 
   <div class="d-flex" id="wrapper">
 
@@ -92,57 +93,44 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-light" id="menu-toggle"><span class="oi oi-menu"></span></button>
         <?php echo "Hello $user->name " ?>
-<!--
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
--->
-        
       </nav>
       <div class="container-fluid">
+      <?php 
+        if(isset($error)) {
+          echo "<div class=\"alert alert-danger\">".$error."</div>";
+        }
+        if(isset($success)){
+          echo "<div class=\"alert alert-success\">".$success."</div>";
+        }
+      ?>
 
         <h2 class="text-center recent-marks">
           Your recent marks:
         </h2>
         <?php
           $grades_sql = "SELECT * FROM rodo.v_students_grades WHERE student_id = ".$user->id.";";
+
           include_once('database_connection.php');
           $grades_result = $conn->query($grades_sql);
           if ($grades_result->num_rows > 0) {
             // output data of each row
             $i = 0;
             while($grades_row = $grades_result->fetch_assoc()) {
+              $new = "";
+              if($grades_row['seen'] < 1){
+                $new = "<span class=\"badge badge-primary\">New</span>";
+              }
               echo '
               <div class="card clickable" data-toggle="collapse"  href="#collapse_'.$i.'" aria-expanded="true" aria-controls="collapse_'.$i.'">
                 <div class="card-body">
-                  <h5 class="card-title">'.$grades_row['value']." - ".$grades_row['task'].'  <span class="badge badge-primary">New</span></h5>
+                  <h5 class="card-title">'.$grades_row['value']." - ".$grades_row['task'].' '.$new.'</h5>
                   <div class="collapse multi-collapse" id="collapse_'.$i.'">
                     <p class="card-text">data: '.$grades_row['date'].'<br>komentarz: '.$grades_row['comment'].'<br><i>'.$grades_row['teacher_name'].'</i></p>
                     <form action="main_student.php" method="post">
                       <input type="hidden" name="grade_to_delete" value="'.$grades_row['id'].'">
                       <button type="submit" name="submit" value="student_delete_grade" class="btn btn-danger" >Delete</button>
+                      <input type="hidden" name="grade_seen" value="'.$grades_row['id'].'">
+                      <button type="submit" name="submit" value="student_mark_as_seen_grade" class="btn btn-primary" >Mark as seen</button>
                     </form>
                   </div>
 
@@ -154,42 +142,9 @@
           }
         ?>
 
-        <!--
-        <div class="card clickable" data-toggle="collapse"  href="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-          <div class="card-body">
-            <h5 class="card-title">5 - PDSwww <span class="badge badge-primary">New</span></h5>
-            <div class="collapse multi-collapse" id="collapse_1">
-              <p class="card-text">28/04/2020 short information about this exam</p>
-              <a href="#" class="btn btn-danger">delete</a>
-            </div>
-
-          </div>
-        </div>
-        <div class="card clickable" data-toggle="collapse"  href="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-          <div class="card-body">
-            <h5 class="card-title">4 - PSI </h5>
-            <div class="collapse multi-collapse" id="collapse_2">
-              <p class="card-text">01/04/2020 homework</p>
-              <a href="#" class="btn btn-danger">delete</a>
-            </div>
-          </div>
-        </div>
-        <div class="card clickable" data-toggle="collapse"  href="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-          <div class="card-body">
-            <h5 class="card-title">3 - SCR </h5>
-            <div class="collapse multi-collapse" id="collapse_3">
-              <p class="card-text">25/03/2020 exercise 2</p>
-              <a href="#" class="btn btn-danger">delete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
 
 
     </div>
-    <!-- /#page-content-wrapper -->
-
 
     <?php
     include "bug_report_form.php";

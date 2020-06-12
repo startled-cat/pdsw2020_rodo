@@ -43,6 +43,7 @@
   }
 
   if( isset($_POST) and isset($_POST["login"]) and isset($_POST["password"]) ){
+    include_once('functions.php');
 
     //echo " login = ". $_POST["login"];
     //echo " password = ". $_POST["password"];
