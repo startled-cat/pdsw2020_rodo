@@ -6,7 +6,7 @@
         $user = $_SESSION["user"];
     }else{
         echo "<b> u r not logged, go away!</b>";
-        //header('Location: ' . "index.php", true, $permanent ? 301 : 302);
+        header('Location: ' . "index.php", true, $permanent ? 301 : 302);
     }
 
 
@@ -26,6 +26,6 @@
             echo "successfulyl deleted grades ";
         }
     }else{
-
+        
     }
 ?>

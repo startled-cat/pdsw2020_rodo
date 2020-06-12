@@ -138,6 +138,10 @@
         }elseif($_POST["submit"] == "accounts_file_check"){
           // ------------------------------------------------------------------------------ just check accounts file 
           include "generate_accounts.php";
+
+        }elseif($_POST["submit"] == "send_bug"){
+          // ------------------------------------------------------------------------------ just check accounts file 
+          include "bug_report_send.php";
         }
         echo "</div>";
       }

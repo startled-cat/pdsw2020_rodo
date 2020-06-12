@@ -35,35 +35,7 @@
     //redirect to index?
   }
 
-  if(isset($_POST) && isset($_POST['submit']) ){
-    include_once('database_connection.php');
-    if( $_POST['submit'] == "student_delete_grade" && isset($_POST['grade_to_delete'])){
-      //delete given grade
-      $grade_id = $_POST['grade_to_delete'];
-      $delete_grade_sql =  "DELETE FROM rodo.grades WHERE id = ".$grade_id.";";
-      //echo $delete_grade_sql;
-      
-      $delete_result = $conn->query($delete_grade_sql);
-      //$delete_result = false;
-      if(!$delete_result){
-          $error = "error while trying to delete grade ";
-      }else{
-          $success = "successfully deleted grade ";
-      }
-    }else if( $_POST['submit'] == "student_mark_as_seen_grade" && isset($_POST['grade_seen'])){
-      $grade_id = $_POST['grade_seen'];
-      $update_seen_grades_sql = "UPDATE `rodo`.`grades` SET `rodo`.`grades`.`seen` = 1 WHERE `rodo`.`grades`.`student_id` = ".$user->id." AND `rodo`.`grades`.`id` = ".$grade_id.";";
-      $update_result = $conn->query($update_seen_grades_sql);
-      if(!$update_result){
-        $error = "error while marking grade as seen";
-      }else{
-        //$success = "marked grade as seen";
-      }
-
-    }
-    
-
-  }
+  
 
 ?>
 </head>
@@ -96,6 +68,40 @@
       </nav>
       <div class="container-fluid">
       <?php 
+        if(isset($_POST) && isset($_POST['submit']) ){
+          include_once('database_connection.php');
+          if( $_POST['submit'] == "student_delete_grade" && isset($_POST['grade_to_delete'])){
+            //delete given grade
+            $grade_id = $_POST['grade_to_delete'];
+            $delete_grade_sql =  "DELETE FROM rodo.grades WHERE id = ".$grade_id.";";
+            //echo $delete_grade_sql;
+            
+            $delete_result = $conn->query($delete_grade_sql);
+            //$delete_result = false;
+            if(!$delete_result){
+                $error = "error while trying to delete grade ";
+            }else{
+                $success = "successfully deleted grade ";
+            }
+          }else if( $_POST['submit'] == "student_mark_as_seen_grade" && isset($_POST['grade_seen'])){
+            $grade_id = $_POST['grade_seen'];
+            $update_seen_grades_sql = "UPDATE `rodo`.`grades` SET `rodo`.`grades`.`seen` = 1 WHERE `rodo`.`grades`.`student_id` = ".$user->id." AND `rodo`.`grades`.`id` = ".$grade_id.";";
+            $update_result = $conn->query($update_seen_grades_sql);
+            if(!$update_result){
+              $error = "error while marking grade as seen";
+            }else{
+              //$success = "marked grade as seen";
+            }
+      
+          }elseif($_POST["submit"] == "send_bug"){
+            // -------------------------------------------
+            echo "<div class=\"alert alert-info\">";
+            include "bug_report_send.php";
+            echo "</div>";
+          }
+          
+      
+        }
         if(isset($error)) {
           echo "<div class=\"alert alert-danger\">".$error."</div>";
         }
