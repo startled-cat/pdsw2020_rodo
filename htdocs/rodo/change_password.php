@@ -4,6 +4,7 @@
         if ($connection->connect_error) {
             die("Connection failed: " . $connection->connect_error);
             $response_array["response"] = 'Database connection error. Please try again later.';
+            $response_array["success"] = "false";
             echo json_encode($response_array);
             exit(1);
         }
@@ -19,6 +20,7 @@
             $name_field = "login";
         } else {
             $response_array["response"] = "Wrong user type";
+            $response_array["success"] = "false";
             echo json_encode($response_array);
             exit(1);
         }
@@ -28,6 +30,7 @@
         $result = $connection->query($query);
         if (!$result || $result->num_rows <= 0) {
             $response_array["response"] = "Wrong password supplied! No user with that password found. Supply valid one!";
+            $response_array["success"] = "false";
             echo json_encode($response_array);
             exit(1);
         }
@@ -37,9 +40,11 @@
         $connection->query($update_query);
         if (mysqli_affected_rows($connection) == 1) {
             $response_array["response"] = "Password changed successfully!";
+            $response_array["success"] = "true";
             echo json_encode($response_array);
         } else {
             $response_array["response"] = "Nothing has changed.";
+            $response_array["success"] = "false";
             echo json_encode($response_array);
         }
     } else {

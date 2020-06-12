@@ -19,6 +19,7 @@
             </div>
         </form>
         </div>
+        <div id="changePassResponseInfo"></div>
         <div class="modal-footer">
         <button type="button" class="btn btn-light btn-lg btn-block btn-outline-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top:0" id="changePasswordButton">Change</button>

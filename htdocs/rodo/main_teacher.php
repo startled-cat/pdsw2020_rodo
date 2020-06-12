@@ -361,7 +361,17 @@
         data: {user_type: "teacher", login: login, old_password: oldPass, new_password: newPass},
         success: function(r) {
           console.log(r);
-          alert(JSON.parse(r).response);
+          // alert(JSON.parse(r).response);
+          var responseObj = JSON.parse(r);
+          var responseString = responseObj.response;
+          var colorString = responseObj.success === "true" ? "#1b9400" : "#c40000";
+          $("#changePassResponseInfo").
+              empty().
+              append(`<h2 style="margin-left: 25px; color: ${colorString}; font-size:18px;">${responseString}</h2>`).
+              hide().
+              fadeIn(750).
+              delay(3500).
+              fadeOut('slow');
         },
         error: function(error) {
           alert("Ajax request error");
@@ -369,11 +379,11 @@
         }
       });
     }
-
+  </script>
+  <script>
     $("#changePasswordButton").click(e => {
       sendChangePasswordRequest();
     });
-
   </script>
 
 </body>
