@@ -41,6 +41,13 @@ class User{
                 }else{
                     return "wrong password!";
                 }
+
+                $today = date("Y-m-d");
+                if ($row['expire_date'] != NULL && $row['expire_date'] < $today) {
+                    //error, expired
+                    return "account has expired! (".$row['expire_date'].")";
+                }
+
             } else {
                 return "could not find user";
             }
