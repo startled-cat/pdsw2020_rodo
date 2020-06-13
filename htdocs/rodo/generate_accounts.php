@@ -65,7 +65,7 @@ if (isset($_FILES) && isset($_POST) && isset($_FILES["accounts_fileToUpload"])) 
 
                 $sql_select = $sql_select."'$student_nr',";//TODO clean bc sql injection
 
-                $password = generate_password($student_nr);
+                $password = generate_password(10);
                 $enc_password = encryptPassword($password);
 
                 $accounts_table = $accounts_table.'

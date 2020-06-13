@@ -1,7 +1,7 @@
 <?php
 
-function generate_password($seed){
-    return randomPassword(10);
+function generate_password($length){
+    return randomPassword($length);
 }
 
 function randomPassword($length) {
