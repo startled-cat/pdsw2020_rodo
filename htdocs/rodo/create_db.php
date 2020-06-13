@@ -1,37 +1,11 @@
 <?PHP
 
-$sql = "-- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 12, 2020 at 05:33 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
-
-SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";
-START TRANSACTION;
-SET time_zone = \"+00:00\";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `rodo`
---
-drop database if exists `rodo2`;
-CREATE DATABASE IF NOT EXISTS `rodo2` DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;
+$sql_create_db = 
+"
+drop database if exists `rodo2`;  
+CREATE DATABASE `rodo2` DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;  
+  
 USE `rodo2`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bugs`
---
-
 CREATE TABLE `bugs` (
   `id` int(11) NOT NULL,
   `author_id` int(11) NOT NULL,
@@ -39,16 +13,8 @@ CREATE TABLE `bugs` (
   `date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Truncate table before insert `bugs`
---
 
 TRUNCATE TABLE `bugs`;
--- --------------------------------------------------------
-
---
--- Table structure for table `grades`
---
 
 CREATE TABLE `grades` (
   `id` int(11) NOT NULL,
@@ -62,14 +28,8 @@ CREATE TABLE `grades` (
   `seen` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Truncate table before insert `grades`
---
 
 TRUNCATE TABLE `grades`;
---
--- Dumping data for table `grades`
---
 
 INSERT INTO `grades` (`id`, `student_id`, `teacher_id`, `value`, `task`, `comment`, `date`, `expire_date`, `seen`) VALUES
 (1, 1, 1, '4', 'zaliczenie zad -1', NULL, '2020-05-27', '2020-08-13', 0),
@@ -79,17 +39,12 @@ INSERT INTO `grades` (`id`, `student_id`, `teacher_id`, `value`, `task`, `commen
 (6, 2, 2, '3', 'kolokwium 1', NULL, '2020-05-19', '2020-07-11', 0),
 (7, 2, 1, '5', 'egzamin - psi', NULL, '2020-05-26', '2020-07-21', 1),
 (8, 2, 2, '3', 'kolokwium 3', NULL, '2020-05-25', '2020-07-11', 1),
-(50, 3, 1, '4', 'Systemy Operacyjne 2 kolokwium 1\r', 'ok\r', '2020-06-01', '0000-00-00', 0),
-(51, 4, 1, '5', 'Systemy Operacyjne 2 kolokwium 1\r', 'ok\r', '2020-06-01', '0000-00-00', 0),
-(52, 5, 1, '5', 'Systemy Operacyjne 2 kolokwium 1\r', 'ok\r', '2020-06-01', '0000-00-00', 0),
-(53, 7, 1, '5', 'Systemy Operacyjne 2 kolokwium 1\r', 'ok\r', '2020-06-01', '0000-00-00', 0),
-(54, 6, 1, '4', 'Systemy Operacyjne 2 kolokwium 1\r', '(-) wszystko gra', '2020-06-01', '0000-00-00', 0);
+(50, 3, 1, '4', 'Systemy Operacyjne 2 kolokwium 1', 'ok', '2020-06-01', '0000-00-00', 0),
+(51, 4, 1, '5', 'Systemy Operacyjne 2 kolokwium 1', 'ok', '2020-06-01', '0000-00-00', 0),
+(52, 5, 1, '5', 'Systemy Operacyjne 2 kolokwium 1', 'ok', '2020-06-01', '0000-00-00', 0),
+(53, 7, 1, '5', 'Systemy Operacyjne 2 kolokwium 1', 'ok', '2020-06-01', '0000-00-00', 0),
+(54, 6, 1, '4', 'Systemy Operacyjne 2 kolokwium 1', '(-) wszystko gra', '2020-06-01', '0000-00-00', 0);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `students`
---
 
 CREATE TABLE `students` (
   `id` int(11) NOT NULL COMMENT 'student''s account id',
@@ -98,14 +53,8 @@ CREATE TABLE `students` (
   `expire_date` date DEFAULT NULL COMMENT 'student''s account expire date'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Truncate table before insert `students`
---
 
 TRUNCATE TABLE `students`;
---
--- Dumping data for table `students`
---
 
 INSERT INTO `students` (`id`, `number`, `password`, `expire_date`) VALUES
 (1, '222333', '731982a033a5cc815ac03c8504abb748', '2020-10-31'),
@@ -128,11 +77,6 @@ INSERT INTO `students` (`id`, `number`, `password`, `expire_date`) VALUES
 (85, '123467', '0052069db1a0017f6a27f27e6dcbb919', '2020-09-01'),
 (86, '123468', '5796c320fc57746358429ef5bb5dc4f3', '2020-09-01');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `teachers`
---
 
 CREATE TABLE `teachers` (
   `id` int(11) NOT NULL,
@@ -141,14 +85,7 @@ CREATE TABLE `teachers` (
   `display_name` varchar(100) COLLATE utf8_polish_ci DEFAULT NULL COMMENT 'name and surname displayed to students'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
---
--- Truncate table before insert `teachers`
---
-
 TRUNCATE TABLE `teachers`;
---
--- Dumping data for table `teachers`
---
 
 INSERT INTO `teachers` (`id`, `login`, `password`, `display_name`) VALUES
 (1, 'adamko1', '509497fec7f7a18815f65916d10db0f0', 'dr. inż. Adam Kowalczyk'),
@@ -156,74 +93,36 @@ INSERT INTO `teachers` (`id`, `login`, `password`, `display_name`) VALUES
 
 
 
--- Indexes for dumped tables
---
-
---
--- Indexes for table `bugs`
---
 ALTER TABLE `bugs`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `grades`
---
 ALTER TABLE `grades`
   ADD PRIMARY KEY (`id`),
   ADD KEY `grade-teacher` (`teacher_id`),
   ADD KEY `grade-student` (`student_id`);
 
---
--- Indexes for table `students`
---
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `teachers`
---
 ALTER TABLE `teachers`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `bugs`
---
 ALTER TABLE `bugs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT for table `grades`
---
 ALTER TABLE `grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
---
--- AUTO_INCREMENT for table `students`
---
 ALTER TABLE `students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'student''s account id', AUTO_INCREMENT=87;
 
---
--- AUTO_INCREMENT for table `teachers`
---
 ALTER TABLE `teachers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `grades`
---
 ALTER TABLE `grades`
   ADD CONSTRAINT `grade-student` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `grade-teacher` FOREIGN KEY (`teacher_id`) REFERENCES `teachers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+
 
 
 DROP table IF EXISTS `v_students_grades`;
@@ -250,11 +149,30 @@ FROM
 WHERE
     `grades`.`teacher_id` = `teachers`.`id` AND `grades`.`student_id` = `students`.`id`;
 
-    
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 ";
+
+$sql_servername = "localhost";
+$sql_username = "root";
+$sql_password = "";
+
+// Create connection
+$conn = new mysqli($sql_servername, $sql_username, $sql_password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+//echo $sql_create_db;
+echo "<hr>";
+$result = $conn->multi_query($sql_create_db);
+if(!$result){
+    echo "Error description: " . $conn -> error;
+}else{
+    echo "successfully created db ";
+    
+}
+
+
 
 ?>

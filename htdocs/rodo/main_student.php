@@ -135,8 +135,11 @@
                     <form action="main_student.php" method="post">
                       <input type="hidden" name="grade_to_delete" value="'.$grades_row['id'].'">
                       <button type="submit" name="submit" value="student_delete_grade" class="btn btn-danger" >Delete</button>
-                      <input type="hidden" name="grade_seen" value="'.$grades_row['id'].'">
-                      <button type="submit" name="submit" value="student_mark_as_seen_grade" class="btn btn-primary" >Mark as seen</button>
+                      <input type="hidden" name="grade_seen" value="'.$grades_row['id'].'">';
+              if($grades_row['seen'] < 1){
+                echo '<button type="submit" name="submit" value="student_mark_as_seen_grade" class="btn btn-primary" >Mark as seen</button>';
+              }
+              echo '
                     </form>
                   </div>
 
