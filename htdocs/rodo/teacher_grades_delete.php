@@ -15,7 +15,7 @@
     if(isset($_POST["task_to_delete"])){
         $task_title = $_POST["task_to_delete"];
         //echo ' will deelte all grades from task : '.$task_title;
-        $sql_delete = "DELETE FROM rodo.grades WHERE task = '".$task_title."';";
+        $sql_delete = "DELETE FROM grades WHERE task = '".$task_title."';";
         //echo $sql_delete;
         include_once("database_connection.php");
         $delete_result = $conn->query($sql_delete);

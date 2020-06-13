@@ -1,7 +1,7 @@
 <?php
 include_once("database_connection.php");
 
-$sql = "SELECT * FROM rodo.students";
+$sql = "SELECT * FROM students";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

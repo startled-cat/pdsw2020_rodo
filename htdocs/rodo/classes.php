@@ -27,7 +27,7 @@ class User{
         //echo "Connected successfully";
         //sanitize $this->login todo
         $this->login = $conn->real_escape_string($this->login);
-        $sql = "SELECT * FROM rodo.students WHERE rodo.students.number = '".$this->login."';";
+        $sql = "SELECT * FROM students WHERE students.number = '".$this->login."';";
         //echo $sql;
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
@@ -65,7 +65,7 @@ class User{
         //echo "Connected successfully";
         //sanitize $this->login todo
         $this->login = $conn->real_escape_string($this->login);
-        $sql = "SELECT * FROM rodo.teachers WHERE rodo.teachers.login = '".$this->login."';";
+        $sql = "SELECT * FROM teachers WHERE teachers.login = '".$this->login."';";
         //echo $sql;
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {

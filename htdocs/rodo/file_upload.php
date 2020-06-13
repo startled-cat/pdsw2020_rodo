@@ -37,7 +37,7 @@
 
             include_once("database_connection.php");
 
-            $sql_insert = "INSERT INTO `rodo`.`grades`(`student_id`, `teacher_id`, `value`, `task`, `comment`, `expire_date`) VALUES ";
+            $sql_insert = "INSERT INTO `grades`(`student_id`, `teacher_id`, `value`, `task`, `comment`, `expire_date`) VALUES ";
 
             //echo "exam name : ".$result->exam_name,"<br>";
             if($mark_title != ""){
@@ -46,7 +46,7 @@
 
             foreach($result->students_results as &$data) {
 
-                $student_id = "(SELECT id FROM rodo.students WHERE number = ".$data->index.")";
+                $student_id = "(SELECT id FROM students WHERE number = ".$data->index.")";
                 $teacher_id = $user->id;
                 $comment = $data->comments;
 

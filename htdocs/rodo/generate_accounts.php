@@ -41,8 +41,8 @@ if (isset($_FILES) && isset($_POST) && isset($_FILES["accounts_fileToUpload"])) 
             include_once("database_connection.php");
             include_once("functions.php");
 
-            $sql_select = "SELECT `rodo`.`students`.`number` as number FROM `rodo`.`students` WHERE `number` in(";
-            $sql_insert = "INSERT INTO `rodo`.`students` (`number`, `password`, `expire_date`) VALUES ";
+            $sql_select = "SELECT `students`.`number` as number FROM `students` WHERE `number` in(";
+            $sql_insert = "INSERT INTO `students` (`number`, `password`, `expire_date`) VALUES ";
             $accounts_table = '
             <div class="alert alert-success"> Successfully generated students\' accounts: </div>
             <table class="table table-striped">

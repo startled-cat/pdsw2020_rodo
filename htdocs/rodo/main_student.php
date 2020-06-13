@@ -73,7 +73,7 @@
           if( $_POST['submit'] == "student_delete_grade" && isset($_POST['grade_to_delete'])){
             //delete given grade
             $grade_id = $_POST['grade_to_delete'];
-            $delete_grade_sql =  "DELETE FROM rodo.grades WHERE id = ".$grade_id.";";
+            $delete_grade_sql =  "DELETE FROM grades WHERE id = ".$grade_id.";";
             //echo $delete_grade_sql;
             
             $delete_result = $conn->query($delete_grade_sql);
@@ -85,7 +85,7 @@
             }
           }else if( $_POST['submit'] == "student_mark_as_seen_grade" && isset($_POST['grade_seen'])){
             $grade_id = $_POST['grade_seen'];
-            $update_seen_grades_sql = "UPDATE `rodo`.`grades` SET `rodo`.`grades`.`seen` = 1 WHERE `rodo`.`grades`.`student_id` = ".$user->id." AND `rodo`.`grades`.`id` = ".$grade_id.";";
+            $update_seen_grades_sql = "UPDATE `grades` SET `grades`.`seen` = 1 WHERE `grades`.`student_id` = ".$user->id." AND `grades`.`id` = ".$grade_id.";";
             $update_result = $conn->query($update_seen_grades_sql);
             if(!$update_result){
               $error = "error while marking grade as seen";
@@ -114,7 +114,7 @@
           Your recent marks:
         </h2>
         <?php
-          $grades_sql = "SELECT * FROM rodo.v_students_grades WHERE student_id = ".$user->id.";";
+          $grades_sql = "SELECT * FROM v_students_grades WHERE student_id = ".$user->id.";";
 
           include_once('database_connection.php');
           $grades_result = $conn->query($grades_sql);

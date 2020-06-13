@@ -2,7 +2,7 @@
 include_once("database_connection.php");
 
 
-$sql = "SELECT * FROM rodo.v_students_grades";
+$sql = "SELECT * FROM v_students_grades";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

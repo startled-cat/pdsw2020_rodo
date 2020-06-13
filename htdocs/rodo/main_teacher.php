@@ -157,7 +157,7 @@
       </h2>
 
       <?php
-        $tasks_query = "select task from rodo.grades where teacher_id = ".$user->id." group by task;";
+        $tasks_query = "select task from grades where teacher_id = ".$user->id." group by task;";
         //echo $query;
         $marks_tasks_result = $conn->query($tasks_query);
         if ($marks_tasks_result->num_rows > 0) {
@@ -172,7 +172,7 @@
                 <p class="card-text">';
 
             //echo "task: " . $marks_tasks_row["task"]."<br>";
-            $marks_query = "SELECT * FROM rodo.v_students_grades where teacher_id = ".$user->id." and task = '".$marks_tasks_row["task"]."';";
+            $marks_query = "SELECT * FROM v_students_grades where teacher_id = ".$user->id." and task = '".$marks_tasks_row["task"]."';";
             //echo $marks_query;
             $marks_result = $conn->query($marks_query);
             if ($marks_result->num_rows > 0) {

@@ -14,7 +14,7 @@
     //$_POST["mark_name"]
     if(isset($_POST["message-text"])){
         $msg = $_POST["message-text"];
-        $sql_insert = "INSERT INTO `rodo`.`bugs` (`author_id`, `text`) VALUES (".$user->id.",'".$msg."')";//todo: sql injection
+        $sql_insert = "INSERT INTO `bugs` (`author_id`, `text`) VALUES (".$user->id.",'".$msg."')";//todo: sql injection
         //echo $sql_insert;
         include_once("database_connection.php");
         $insert_result = $conn->query($sql_insert);

@@ -123,7 +123,7 @@ class Test{
         include 'database_connection.php';
         $username = "000000";
         $password = "1234567891234567890";
-        $sql = "INSERT INTO `rodo`.`students` (`number`, `password`, `expire_date`) VALUES ('".$username."', '" . encryptPassword($password) . "', NULL);";
+        $sql = "INSERT INTO `students` (`number`, `password`, `expire_date`) VALUES ('".$username."', '" . encryptPassword($password) . "', NULL);";
         if($result = $conn->query($sql)){
            echo "success<br>";
         }
@@ -158,7 +158,7 @@ class Test{
 
         echo "deleting temp user from database ...<br>";
         include 'database_connection.php';
-        $sql = "DELETE FROM `rodo`.`students` WHERE `number` = '$username';";
+        $sql = "DELETE FROM `students` WHERE `number` = '$username';";
         if($result = $conn->query($sql)){
            echo "success<br>";
         }

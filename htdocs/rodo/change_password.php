@@ -10,7 +10,7 @@
             exit(1);
         }
 
-        $query = "select * from rodo.";
+        $query = "select * from ";
         $table_name = "";
         $name_field = "";
         if ($_POST["user_type"] == "student") {
@@ -39,7 +39,7 @@
 
         $new_pass = $_POST["new_password"];
         $new_pass = encryptPassword($new_pass);
-        $update_query = "update rodo." . $table_name . " set password = '$new_pass' where $name_field like '$login' and password like '$old_pass';";
+        $update_query = "update " . $table_name . " set password = '$new_pass' where $name_field like '$login' and password like '$old_pass';";
         $connection->query($update_query);
         if (mysqli_affected_rows($connection) == 1) {
             $response_array["response"] = "Password changed successfully!";
