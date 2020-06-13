@@ -112,26 +112,31 @@ class Test{
         echo "checking setting and getting login ...<br>";
         $user = new User();
         $user->set_login("asd");
-        if("asd" != $user->get_login()){
-            return False;
-        } 
-        echo "checking login ...<br>";
+        //if("asd" != $user->get_login()){
+        //    return False;
+        //} 
+        $test_result = True;
+        echo "checking login as student ...<br>";
         echo "creating temp user in database ...<br>";
+        echo "importing \"functions.php\"<br>";
+        require_once('functions.php');
         include 'database_connection.php';
-        $username = "qwertyui";
+        $username = "000000";
         $password = "1234567891234567890";
-        $sql = "INSERT INTO `rodo`.`students` (`number`, `password`, `expire_date`) VALUES ('$username', '$password', NULL);";
+        $sql = "INSERT INTO `rodo`.`students` (`number`, `password`, `expire_date`) VALUES ('".$username."', '" . encryptPassword($password) . "', NULL);";
         if($result = $conn->query($sql)){
-            echo "success<br>";
+           echo "success<br>";
         }
         $conn->close();
+        //sleep(3);
 
 
         echo "login with wrong username and empty password = ";
         $result = $user->login_as_student("");
         echo $result."<br>";
         if($result == ""){
-            return False;
+            echo "error<br>";
+            $test_result = False;
         }
         
         $user->set_login($username);
@@ -139,28 +144,27 @@ class Test{
         $result = $user->login_as_student("");
         echo $result."<br>";
         if($result == ""){
-            return False;
+            echo "error<br>";
+            $test_result = False;
         }
 
         echo "login with correct credentials = ";
         $result = $user->login_as_student($password);
         echo $result."<br>";
         if($result != ""){
-            return False;
+            echo "error<br>";
+            $test_result = False;
         }
 
         echo "deleting temp user from database ...<br>";
+        include 'database_connection.php';
+        $sql = "DELETE FROM `rodo`.`students` WHERE `number` = '$username';";
+        if($result = $conn->query($sql)){
+           echo "success<br>";
+        }
+        $conn->close();
 
-        //include 'database_connection.php';
-        //$sql = "DELETE FROM `rodo`.`students` WHERE `number` = '$username';";
-        //if($result = $conn->query($sql)){
-        //    echo "success<br>";
-        //}
-        //$conn->close();
-
-        
-
-        return True;
+        return $test_result;
     }
 }
 Test::run();
