@@ -104,6 +104,64 @@ class Test{
         
         return True;
     }
+
+    public static function testClassUser(){
+        echo "importing \"classes.php\"<br>";
+        include_once("classes.php");
+
+        echo "checking setting and getting login ...<br>";
+        $user = new User();
+        $user->set_login("asd");
+        if("asd" != $user->get_login()){
+            return False;
+        } 
+        echo "checking login ...<br>";
+        echo "creating temp user in database ...<br>";
+        include 'database_connection.php';
+        $username = "qwertyui";
+        $password = "1234567891234567890";
+        $sql = "INSERT INTO `rodo`.`students` (`number`, `password`, `expire_date`) VALUES ('$username', '$password', NULL);";
+        if($result = $conn->query($sql)){
+            echo "success<br>";
+        }
+        $conn->close();
+
+
+        echo "login with wrong username and empty password = ";
+        $result = $user->login_as_student("");
+        echo $result."<br>";
+        if($result == ""){
+            return False;
+        }
+        
+        $user->set_login($username);
+        echo "login with empty password = ";
+        $result = $user->login_as_student("");
+        echo $result."<br>";
+        if($result == ""){
+            return False;
+        }
+
+        echo "login with correct credentials = ";
+        $result = $user->login_as_student($password);
+        echo $result."<br>";
+        if($result != ""){
+            return False;
+        }
+
+        echo "deleting temp user from database ...<br>";
+
+        //include 'database_connection.php';
+        //$sql = "DELETE FROM `rodo`.`students` WHERE `number` = '$username';";
+        //if($result = $conn->query($sql)){
+        //    echo "success<br>";
+        //}
+        //$conn->close();
+
+        
+
+        return True;
+    }
 }
 Test::run();
 ?>
