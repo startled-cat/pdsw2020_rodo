@@ -26,9 +26,11 @@ class User{
         include_once('functions.php');
         //echo "Connected successfully";
         //sanitize $this->login todo
-        $this->login = $conn->real_escape_string($this->login);
+        #$this->login = $conn->real_escape_string($this->login);
+        $this->login = clear($conn, $this->login);
         $sql = "SELECT * FROM students WHERE students.number = '".$this->login."';";
         //echo $sql;
+        //exit(1);
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
@@ -64,7 +66,8 @@ class User{
         include_once('functions.php');
         //echo "Connected successfully";
         //sanitize $this->login todo
-        $this->login = $conn->real_escape_string($this->login);
+        #$this->login = $conn->real_escape_string($this->login);
+        $this->login = clear($conn, $this->login);
         $sql = "SELECT * FROM teachers WHERE teachers.login = '".$this->login."';";
         //echo $sql;
         if($result = $conn->query($sql)){

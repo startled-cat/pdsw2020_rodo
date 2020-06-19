@@ -1,6 +1,7 @@
 <?php 
     include_once("file_parse.php");
     include_once("classes.php");
+    include_once("functions.php");
     //session_start();
     if(isset($_SESSION["user"])){
         $user = $_SESSION["user"];
@@ -15,7 +16,7 @@
     $mark_title = "";
     //$_POST["mark_name"]
     if(isset($_POST["mark_name"])){
-        $mark_title = $_POST["mark_name"];
+        $mark_title = clean2($_POST["mark_name"]);
     }
 
     

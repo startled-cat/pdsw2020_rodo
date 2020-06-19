@@ -19,4 +19,34 @@ function encryptPassword($pass){
     return md5($pass);
 }
 
+
+
+function clear($db_conn, $string) {
+    
+    $string = htmlentities($string);
+    
+    $db_conn->real_escape_string($string);
+    
+    $string = str_replace("'", "''", $string);
+    $string = str_replace("\\", "\\\\", $string);
+    $string = str_replace(";", "", $string);
+    $string = str_replace("*", "", $string);
+    
+    return $string;
+}
+
+function clean2($string){
+    $string = htmlentities($string);
+    
+    //$db_conn->real_escape_string($string);
+    
+    $string = str_replace("'", "''", $string);
+    $string = str_replace("\\", "\\\\", $string);
+    $string = str_replace(";", "", $string);
+    $string = str_replace("*", "", $string);
+    
+    return $string;
+}
+
+
 ?>
