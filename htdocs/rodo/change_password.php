@@ -1,11 +1,12 @@
 <?php
     include_once('functions.php');
     if (isset($_POST) && isset($_POST["user_type"]) && isset($_POST["login"]) && isset($_POST["old_password"]) && isset($_POST["new_password"])) {
-        //$conn = new mysqli("localhost", "root", "");
-        include_once('database_conn.php');
-        if ($conn->connect_error) {
-            die("conn failed: " . $conn->connect_error);
-            $response_array["response"] = 'Database conn error. Please try again later.';
+        #$connection = new mysqli("localhost", "root", "");
+        include_once('database_connection.php');
+        $connection = $conn;
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+            $response_array["response"] = 'Database connection error. Please try again later.';
             $response_array["success"] = "false";
             echo json_encode($response_array);
             exit(1);
@@ -26,12 +27,11 @@
             echo json_encode($response_array);
             exit(1);
         }
-
-        $login = clean($conn, $_POST["login"]);
-        $old_pass = clean($conn, $_POST["old_password"]);
+        $login = clear($connection, $_POST["login"]);
+        $old_pass = clear($conn, $_POST["old_password"]);
         $old_pass = encryptPassword($old_pass);
         $query = $query . $table_name . " where $name_field like '$login' and password like '$old_pass';";
-        $result = $conn->query($query);
+        $result = $connection->query($query);
         if (!$result || $result->num_rows <= 0) {
             $response_array["response"] = "Wrong password supplied! No user with that password found. Supply valid one!";
             $response_array["success"] = "false";
@@ -39,11 +39,11 @@
             exit(1);
         }
 
-        $new_pass = clean($conn, $_POST["new_password"]);
+        $new_pass = clear($connection, $_POST["new_password"]);
         $new_pass = encryptPassword($new_pass);
         $update_query = "update " . $table_name . " set password = '$new_pass' where $name_field like '$login' and password like '$old_pass';";
-        $conn->query($update_query);
-        if (mysqli_affected_rows($conn) == 1) {
+        $connection->query($update_query);
+        if (mysqli_affected_rows($connection) == 1) {
             $response_array["response"] = "Password changed successfully!";
             $response_array["success"] = "true";
             echo json_encode($response_array);
