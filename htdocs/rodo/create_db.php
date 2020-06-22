@@ -6,6 +6,9 @@ drop database if exists `rodo2`;
 CREATE DATABASE `rodo2` DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci;  
   
 USE `rodo2`;
+
+SET GLOBAL event_scheduler =  \"ON\";
+
 CREATE TABLE `bugs` (
   `id` int(11) NOT NULL,
   `author_id` int(11) NOT NULL,
@@ -148,6 +151,21 @@ FROM
     )
 WHERE
     `grades`.`teacher_id` = `teachers`.`id` AND `grades`.`student_id` = `students`.`id`;
+
+
+create event AutoDeleteExpiredGrades
+on schedule 
+every 24 hour 
+starts timestamp(CURRENT_DATE)
+do 
+delete from rodo2.grades where expire_date < CURRENT_DATE;
+
+create event AutoDeleteExpiredStudentAccounts
+on schedule
+every 24 hour
+starts timestamp(CURRENT_DATE)
+do
+delete from rodo2.students where expire_date is not null and expire_date < CURRENT_DATE;
 
 
 ";
